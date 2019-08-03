@@ -15,7 +15,7 @@
 
 ### 下载需要安装的发行版
 
-相关说明？请参阅第2.1.2节“如何获取MySQL”。 要验证分发的完整性，请使用第2.1.3节“使用MD5校验和或GnuPG验证程序包完整性”中的说明。
+请参阅第2.1.2节“如何获取MySQL”。 要验证分发的完整性，请使用第2.1.3节“使用MD5校验和或GnuPG验证程序包完整性”中的说明。
 
 ### 安装MySQL
 
@@ -31,21 +31,21 @@
 
 ### 在不同平台和环境中安装MySQL
 
-UNIX，LINUX，FreeBSD
+* UNIX，LINUX，FreeBSD
 
-使用通用二进制文件（例如，.tar.gz包）在大多数Linux和Unix平台上安装MySQL，请参见第2.2节“使用通用二进制文件在Unix / Linux上安装MySQL”。
+使用通用二进制文件（例如：`.tar.gz`压缩包）在大多数Linux和Unix平台上安装MySQL，请参见第2.2节“使用通用二进制文件在Unix / Linux上安装MySQL”。
 
 有关从源代码发行版或源代码库完全构建MySQL的信息，请参见第2.9节“从源代码安装MySQL”
 
 有关从源代码安装，配置和构建的特定平台版本，请参阅相应的平台部分：
 
-Linux，包括有关分发特定方法的说明，请参见第2.5节“在Linux上安装MySQL”。
+* Linux，包括有关分发特定方法的说明，请参见第2.5节“在Linux上安装MySQL”。
 
-IBM AIX，请参见第2.7节“在Solaris上安装MySQL”。
+* IBM AIX，请参见第2.7节“在Solaris上安装MySQL”。
 
-FreeBSD，参见第2.8节“在FreeBSD中安装MySQL”。
+* FreeBSD，参见第2.8节“在FreeBSD中安装MySQL”。
 
-Microsoft Windows
+* Microsoft Windows
 
 有关在Microsoft Windows上安装MySQL的说明，请使用MySQL 安装包或zip压缩二进制文件，请参见第2.3节“在Microsoft Windows上安装MySQL”。
 
@@ -53,7 +53,7 @@ Microsoft Windows
 
 有关使用Microsoft Visual Studio从源代码构建MySQL的详细信息和说明，请参见第2.9节“从源代码安装MySQL”。
 
-OS X
+* OS X
 
 要在OS X上安装，包括使用二进制包和PKG安装包，请参见第2.4节“在macOS上安装MySQL”。
 
