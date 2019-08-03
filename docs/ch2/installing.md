@@ -1,62 +1,62 @@
 # 第2章 安装和升级MySQL
-本章节介绍如何获取和安装MySQL。以下是程序的摘要，后面的部分提供了详细信息。 如果您计划将现有版本的MySQL升级到较新版本而不是首次安装MySQL，请参见第2.11节“升级MySQL”，了解有关升级过程以及升级前应考虑的问题的信息。
+本章节介绍如何获取和安装MySQL。以下是程序的摘要，后面的部分提供了详细信息。 如果您计划将现有版本的MySQL升级到较新版本而不是首次安装MySQL，请参阅第2.11节“升级MySQL”，了解有关升级过程以及升级前应考虑的问题的信息。
 
-If you are interested in migrating to MySQL from another database system, see Section A.8, “MySQL 8.0 FAQ: Migration”, which contains answers to some common questions concerning migration issues.
+如果你想迁移其他数据库到MySQL，请参阅第八章 “MySQL 8.0 FAQ: 迁移”，该章节包括迁移相关问题的解答。
 
-Installation of MySQL generally follows the steps outlined here:
+## MySQL的安装通常需要遵循以下步骤
 
-Determine whether MySQL runs and is supported on your platform.
+### 确定MySQL是否可以在您的平台上运行并受支持。
 
-Please note that not all platforms are equally suitable for running MySQL, and that not all platforms on which MySQL is known to run are officially supported by Oracle Corporation. For information about those platforms that are officially supported, see https://www.mysql.com/support/supportedplatforms/database.html on the MySQL website.
+请注意，并非所有平台都可以运行MySQL，而且并非所有运行MySQL的平台都由Oracle Corporation正式支持。 有关官方支持的平台的信息，请参阅MySQL网站：https://www.mysql.com/support/supportedplatforms/database.html。
 
-Choose which distribution to install.
+### 选择安装的版本
 
-Several versions of MySQL are available, and most are available in several distribution formats. You can choose from pre-packaged distributions containing binary (precompiled) programs or source code. When in doubt, use a binary distribution. Oracle also provides access to the MySQL source code for those who want to see recent developments and test new code. To determine which version and type of distribution you should use, see Section 2.1.1, “Which MySQL Version and Distribution to Install”.
+多个版本的MySQL可用，多数都有几种分发格式。 您可以从包含二进制（预编译）发行版或源代码的预打包发行版中进行选择。不知如何选择？请使用二进制发行版。 Oracle还为那些想要查看最新开发和测试新代码的人提供了MySQL源代码包。 要确定应使用的版本和分发类型，请参阅第2.1.1节“要安装的MySQL版本和分发版本”。
 
-Download the distribution that you want to install.
+### 下载需要安装的发行版
 
-For instructions, see Section 2.1.2, “How to Get MySQL”. To verify the integrity of the distribution, use the instructions in Section 2.1.3, “Verifying Package Integrity Using MD5 Checksums or GnuPG”.
+相关说明？请参阅第2.1.2节“如何获取MySQL”。 要验证分发的完整性，请使用第2.1.3节“使用MD5校验和或GnuPG验证程序包完整性”中的说明。
 
-Install the distribution.
+### 安装MySQL
 
-To install MySQL from a binary distribution, use the instructions in Section 2.2, “Installing MySQL on Unix/Linux Using Generic Binaries”.
+如果想安装二进制发行版MySQL，请参阅第2.2节，“在Unix/Linux上安装二进制发行版MySQL”.
 
-To install MySQL from a source distribution or from the current development source tree, use the instructions in Section 2.9, “Installing MySQL from Source”.
+要从源代码分发版或当前开发源代码安装MySQL，请使用第2.9节“从源代码安装MySQL”中的说明。
 
-Perform any necessary postinstallation setup.
+### 执行任何必要的安装后设置
 
-After installing MySQL, see Section 2.10, “Postinstallation Setup and Testing” for information about making sure the MySQL server is working properly. Also refer to the information provided in Section 2.10.4, “Securing the Initial MySQL Account”. This section describes how to secure the initial MySQL root user account, which has no password until you assign one. The section applies whether you install MySQL using a binary or source distribution.
+安装MySQL后，请参阅第2.10节“安装后设置和测试”以获取有关确保MySQL服务器正常工作的信息。 另请参阅第2.10.4节“保护初始MySQL帐户”中提供的信息。 本节介绍如何保护初始MySQL root用户帐户，该帐户在分配密码之前没有密码。 无论您是使用二进制文件还是源代码分发安装MySQL，本节均适用。
 
-If you want to run the MySQL benchmark scripts, Perl support for MySQL must be available. See Section 2.13, “Perl Installation Notes”.
+如果要运行MySQL benchmark脚本，必须提供对MySQL的Perl支持。 请参阅第2.13节“Perl安装说明”。
 
-Instructions for installing MySQL on different platforms and environments is available on a platform by platform basis:
+### 在不同平台和环境中安装MySQL
 
-Unix, Linux, FreeBSD
+UNIX，LINUX，FreeBSD
 
-For instructions on installing MySQL on most Linux and Unix platforms using a generic binary (for example, a .tar.gz package), see Section 2.2, “Installing MySQL on Unix/Linux Using Generic Binaries”.
+使用通用二进制文件（例如，.tar.gz包）在大多数Linux和Unix平台上安装MySQL，请参见第2.2节“使用通用二进制文件在Unix / Linux上安装MySQL”。
 
-For information on building MySQL entirely from the source code distributions or the source code repositories, see Section 2.9, “Installing MySQL from Source”
+有关从源代码发行版或源代码库完全构建MySQL的信息，请参见第2.9节“从源代码安装MySQL”
 
-For specific platform help on installation, configuration, and building from source see the corresponding platform section:
+有关从源代码安装，配置和构建的特定平台版本，请参阅相应的平台部分：
 
-Linux, including notes on distribution specific methods, see Section 2.5, “Installing MySQL on Linux”.
+Linux，包括有关分发特定方法的说明，请参见第2.5节“在Linux上安装MySQL”。
 
-IBM AIX, see Section 2.7, “Installing MySQL on Solaris”.
+IBM AIX，请参见第2.7节“在Solaris上安装MySQL”。
 
-FreeBSD, see Section 2.8, “在 FreeBSD 中安装MySQL”.
+FreeBSD，参见第2.8节“在FreeBSD中安装MySQL”。
 
 Microsoft Windows
 
-For instructions on installing MySQL on Microsoft Windows, using either the MySQL Installer or Zipped binary, see Section 2.3, “Installing MySQL on Microsoft Windows”.
+有关在Microsoft Windows上安装MySQL的说明，请使用MySQL 安装包或zip压缩二进制文件，请参见第2.3节“在Microsoft Windows上安装MySQL”。
 
-For information about managing MySQL instances, see MySQL Notifier Overview.
+有关管理MySQL实例的信息，请参阅MySQL Notifier Overview。
 
-For details and instructions on building MySQL from source code using Microsoft Visual Studio, see Section 2.9, “Installing MySQL from Source”.
+有关使用Microsoft Visual Studio从源代码构建MySQL的详细信息和说明，请参见第2.9节“从源代码安装MySQL”。
 
 OS X
 
-For installation on OS X, including using both the binary package and native PKG formats, see Section 2.4, “Installing MySQL on macOS”.
+要在OS X上安装，包括使用二进制包和PKG安装包，请参见第2.4节“在macOS上安装MySQL”。
 
-For information on making use of an OS X Launch Daemon to automatically start and stop MySQL, see Section 2.4.3, “Installing and Using the MySQL Launch Daemon”.
+有关使用OS X Launch Daemon自动启动和停止MySQL的信息，请参见第2.4.3节“安装和使用MySQL启动守护程序”。
 
-For information on the MySQL Preference Pane, see Section 2.4.4, “Installing and Using the MySQL Preference Pane”.
+有关MySQL 首选项面板的信息，请参见第2.4.4节“安装和使用MySQL 首选项面板”。
