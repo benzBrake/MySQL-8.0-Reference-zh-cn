@@ -1,6 +1,11 @@
 # MySQL 8.0 参考手册
 
-Including MySQL NDB Cluster 8.0
+包括 MySQL NDB Cluster 8.0
+
+## 关于本站
+
+- 本站对应的github地址是：https://github.com/benzBrake/MySQL-8.0-Reference-zh-cn/
+- 本站对应的官网英文站点是https://dev.mysql.com/doc/refman/8.0/en/。
 
 ## 摘要
 
