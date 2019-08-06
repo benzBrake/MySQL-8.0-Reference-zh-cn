@@ -1,7 +1,7 @@
 <!-- docs/_sidebar.md -->
-* [23.分区](docs/ch23/23.分区.md) 
-* [23.1.MySQL中的分区概述](docs/ch23/23.1.MySQL中的分区概述.md)
-* [23.2.分区类型](docs/ch23/23.2.分区类型.md)
-* [23.2.1.Range分区](docs/ch23/23.2.1.Range分区.md)
-* [23.2.2.List分区](docs/ch23/23.2.2.List分区.md)
-* [23.2.3.Columns分区](docs/ch23/23.2.3.Columns分区.md)
+* [23_分区](docs/ch23/23_分区.md) 
+* [23.1_MySQL中的分区概述](docs/ch23/23.1_MySQL中的分区概述.md)
+* [23.2_分区类型](docs/ch23/23.2_分区类型.md)
+* [23.2.1_Range分区](docs/ch23/23.2.1_Range分区.md)
+* [23.2.2_List分区](docs/ch23/23.2.2_List分区.md)
+* [23.2.3_Columns分区](docs/ch23/23.2.3_Columns分区.md)
