@@ -5,3 +5,4 @@
 * [23.2.1_Range分区](docs/ch23/23.2.1_Range分区.md)
 * [23.2.2_List分区](docs/ch23/23.2.2_List分区.md)
 * [23.2.3_Columns分区](docs/ch23/23.2.3_Columns分区.md)
+* [23.2.3.1_Range Columns分区](docs/ch23/23.2.3.1_Range Columns分区.md)
