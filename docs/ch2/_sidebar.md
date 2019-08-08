@@ -7,4 +7,5 @@
     * [如何获取MySQL](docs/ch2/2.1.2_如何获取MySQL.md)
     * [使用MD5或GnuPG验证安装包](docs/ch2/2.1.3_使用MD5或GnuPG验证安装包.md)
       * [使用MD5验证安装包](docs/ch2/2.1.3.1_使用MD5验证安装包.md)
+      * [使用GunPG验证签名](docs/ch2/2.1.3.2_使用GunPG验证签名.md)
     * [安装输出路径](docs/ch2/2.1.4_安装输出路径.md)
