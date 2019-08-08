@@ -9,14 +9,14 @@
 
 ## 摘要
 
-This is the MySQL™ Reference Manual. It documents MySQL 8.0 through 8.0.19, as well as NDB Cluster releases based on version 8.0 of NDB through 8.0.19-ndb-8.0.19, respectively. It may include documentation of features of MySQL versions that have not yet been released. For information about which versions have been released, see the MySQL 8.0 Release Notes.
+这是MySQL™ 参考手册。包括从MySQL8.0到8.0.19的参考资料，同时也包括从NDB Cluster8.0到8.0.19的参考信息，同时可能含有部分未发布的特性。 有关已发布的版本的信息，请参阅MySQL 8.0发行说明。
 
-**MySQL 8.0 features.**  This manual describes features that are not included in every edition of MySQL 8.0; such features may not be included in the edition of MySQL 8.0 licensed to you. If you have any questions about the features included in your edition of MySQL 8.0, refer to your MySQL 8.0 license agreement or contact your Oracle sales representative.
+**MySQL 8.0功能。**本手册的功能并非每个版本的MySQL都包含，也许您的MySQL授权不包括此类功能。如果您对MySQL 8.0版本中包含的功能有任何疑问，请参阅MySQL 8.0许可协议或联系您的Oracle销售代表。
 
-For notes detailing the changes in each release, see the MySQL 8.0 Release Notes.
+有关详细说明每个版本中的更改的说明，请参阅MySQL 8.0发行说明。
 
-For legal information, including licensing information, see the Preface and Legal Notices.
+有关法律信息（包括许可信息），请参阅前言和法律声明。
 
-For help with using MySQL, please visit the MySQL Forums, where you can discuss your issues with other MySQL users.
+有关使用MySQL的帮助，请访问MySQL论坛，在那里您可以与其他MySQL用户讨论您的问题。
 
-Document generated on: 2019-07-31 (revision: 62930)
+文档生成时间: 2019-07-31 (revision: 62930)
