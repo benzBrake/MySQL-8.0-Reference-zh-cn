@@ -5,4 +5,5 @@
   * [安装指引说明](docs/ch2/2.1_安装指引说明.md)
     * [需要什么版本的MySQL](docs/ch2/2.1.1_需要什么版本的MySQL.md)
     * [如何获取MySQL](docs/ch2/2.1.2_如何获取MySQL.md)
-    * 使用MD5或GnuPG验证安装包
+    * [使用MD5或GnuPG验证安装包](docs/ch2/2.1.3_使用MD5或GnuPG验证安装包.md)
+    * [安装输出路径](docs/ch2/2.1.4_安装输出路径.md)
