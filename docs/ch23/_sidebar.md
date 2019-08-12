@@ -13,3 +13,4 @@
 * [23.2.6_子分区](docs/ch23/23.2.6_子分区.md)
 * [23.2.7_MySql如何处理Null](docs/ch23/23.2.7_MySql如何处理Null.md)
 * [23.3_分区管理](docs/ch23/23.3_分区管理.md)
+* [23.3.1_Range和List的分区管理](docs/ch23/23.3.1_Range和List的分区管理)
