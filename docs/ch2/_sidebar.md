@@ -10,5 +10,6 @@
       * [2.1.3.2_使用GunPG验证签名](docs/ch2/2.1.3.2_使用GunPG验证签名.md)
     * [2.1.4_安装布局](docs/ch2/2.1.4_安装布局.md)
   * [2.5_在Linux上安装MySQL](docs/ch2/2.5_在Linux上安装MySQL.md)
+    * [2.5.1_使用YUM源安装MySQL](docs/ch2/2.5.1_使用YUM源安装MySQL.md)
 * [8_优化](docs/ch8/8_优化.md)
 * [23_分区](docs/ch23/23_分区.md)
