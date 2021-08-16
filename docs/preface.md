@@ -1,41 +1,41 @@
 # 前言和法律声明
 
-This is the Reference Manual for the MySQL Database System, version 8.0, through release 8.0.19. Differences between minor versions of MySQL 8.0 are noted in the present text with reference to release numbers (8.0.*x*). For license information, see the [Legal Notices](https://dev.mysql.com/doc/refman/8.0/en/preface.html#legalnotice).
+这是MySQL数据库系统8.0版至8.0.26版的参考手册。MySQL 8.0的各次要版本之间的差异在本文本中参照发布号（8.0.x）加以说明。关于许可证信息，请参见[法律声明](#法律声明)。
 
-This manual is not intended for use with older versions of the MySQL software due to the many functional and other differences between MySQL 8.0 and previous versions. If you are using an earlier release of the MySQL software, please refer to the appropriate manual. For example, [*MySQL 5.7 Reference Manual*](https://dev.mysql.com/doc/refman/5.7/en/) covers the 5.7 series of MySQL software releases.
+由于MySQL 8.0与以前的版本在功能和其他方面存在许多差异，本手册不打算用于旧版本的MySQL软件。如果你使用的是MySQL软件的早期版本，请参考相应的手册。例如，[MySQL 5.7参考手册](https://dev.mysql.com/doc/refman/5.7/en/)涵盖了5.7系列的MySQL软件版本。
 
-**Licensing information—MySQL 8.0.**  This product may include third-party software, used under license. If you are using a *Commercial* release of MySQL 8.0, see the [MySQL 8.0 Commercial Release License Information User Manual](https://downloads.mysql.com/docs/licenses/mysqld-8.0-com-en.pdf) for licensing information, including licensing information relating to third-party software that may be included in this Commercial release. If you are using a *Community* release of MySQL 8.0, see the [MySQL 8.0 Community Release License Information User Manual](https://downloads.mysql.com/docs/licenses/mysqld-8.0-gpl-en.pdf) for licensing information, including licensing information relating to third-party software that may be included in this Community release.
+许可信息-MySQL 8.0。 本产品可能包括第三方软件，在许可证下使用。如果你使用的是MySQL 8.0的商业版本，请参阅《[MySQL 8.0商业版本许可信息用户手册](https://downloads.mysql.com/docs/licenses/mysqld-8.0-com-en.pdf)》了解许可信息，包括与可能包含在该商业版本中的第三方软件有关的许可信息。如果你使用的是MySQL 8.0的社区版，请参阅《[MySQL 8.0社区版许可信息用户手册](https://downloads.mysql.com/docs/licenses/mysqld-8.0-gpl-en.pdf)》以了解许可信息，包括与可能包含在该社区版中的第三方软件有关的许可信息。
 
-**Licensing information—MySQL NDB Cluster 8.0.**  If you are using a *Community* release of MySQL NDB Cluster 8.0, see the [MySQL NDB Cluster 8.0 Community Release License Information User Manual](https://downloads.mysql.com/docs/licenses/cluster-8.0-gpl-en.pdf) for licensing information, including licensing information relating to third-party software that may be included in this Community release.
+许可信息-MySQL NDB Cluster 8.0。 如果你使用的是MySQL NDB Cluster 8.0的社区版本，请参阅《[MySQL NDB Cluster 8.0社区版本许可信息用户手册](https://downloads.mysql.com/docs/licenses/cluster-8.0-gpl-en.pdf)》以了解许可信息，包括与可能包含在该社区版本中的第三方软件有关的许可信息。
 
 ## 法律声明
 
 Copyright © 1997, 2019, Oracle and/or its affiliates. All rights reserved.
 
-This software and related documentation are provided under a license agreement containing restrictions on use and disclosure and are protected by intellectual property laws. Except as expressly permitted in your license agreement or allowed by law, you may not use, copy, reproduce, translate, broadcast, modify, license, transmit, distribute, exhibit, perform, publish, or display any part, in any form, or by any means. Reverse engineering, disassembly, or decompilation of this software, unless required by law for interoperability, is prohibited.
+本软件和相关文件是根据包含使用和披露限制的许可协议提供的，受知识产权法保护。除非你的许可协议明确允许或法律允许，否则你不得以任何形式或手段使用、拷贝、复制、翻译、广播、修改、许可、传输、分发、展览、执行、出版或展示任何部分。禁止对本软件进行逆向工程、反汇编或反编译，除非法律要求具有互操作性。
 
-The information contained herein is subject to change without notice and is not warranted to be error-free. If you find any errors, please report them to us in writing.
+此处包含的信息如有变化，恕不另行通知，也不保证没有错误。如果你发现任何错误，请以书面形式向我们报告。
 
-If this is software or related documentation that is delivered to the U.S. Government or anyone licensing it on behalf of the U.S. Government, then the following notice is applicable:
+如果这是交付给美国政府或代表美国政府授权的任何人的软件或相关文件，那么以下通知是适用的。
 
-U.S. GOVERNMENT END USERS: Oracle programs, including any operating system, integrated software, any programs installed on the hardware, and/or documentation, delivered to U.S. Government end users are "commercial computer software" pursuant to the applicable Federal Acquisition Regulation and agency-specific supplemental regulations. As such, use, duplication, disclosure, modification, and adaptation of the programs, including any operating system, integrated software, any programs installed on the hardware, and/or documentation, shall be subject to license terms and license restrictions applicable to the programs. No other rights are granted to the U.S. Government.
+美国政府终端用户。甲骨文程序（包括任何操作系统、集成软件、任何嵌入、安装或激活在交付的硬件上的程序，以及对这些程序的修改）和甲骨文计算机文档或其他交付给美国政府最终用户或由其访问的甲骨文数据，根据适用的联邦采购条例和机构特定的补充条例，属于 "商业计算机软件 "或 "商业计算机软件文档"。因此，对i)甲骨文程序（包括任何操作系统、集成软件、任何嵌入、安装或激活在交付的硬件上的程序以及这些程序的修改）、ii)甲骨文计算机文档和/或iii)其他甲骨文数据的使用、复制、发行、展示、披露、修改、准备衍生作品和/或改编，均受适用合同中所载的许可规定的权利和限制。管理美国政府使用甲骨文云服务的条款由适用于此类服务的合同规定。没有授予美国政府其他权利。
 
-This software or hardware is developed for general use in a variety of information management applications. It is not developed or intended for use in any inherently dangerous applications, including applications that may create a risk of personal injury. If you use this software or hardware in dangerous applications, then you shall be responsible to take all appropriate fail-safe, backup, redundancy, and other measures to ensure its safe use. Oracle Corporation and its affiliates disclaim any liability for any damages caused by use of this software or hardware in dangerous applications.
+该软件或硬件是为在各种信息管理应用中的一般用途而开发的。它不是为任何固有的危险应用而开发或打算使用的，包括可能产生人身伤害风险的应用。如果你在危险的应用中使用本软件或硬件，那么你应负责采取所有适当的防故障、备份、冗余和其他措施来确保其安全使用。甲骨文公司及其附属机构对在危险应用中使用本软件或硬件造成的任何损失不承担任何责任。
 
-Oracle and Java are registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.
+Oracle和Java是Oracle和/或其附属机构的注册商标。其他名称可能是其各自所有者的商标。
 
-Intel and Intel Xeon are trademarks or registered trademarks of Intel Corporation. All SPARC trademarks are used under license and are trademarks or registered trademarks of SPARC International, Inc. AMD, Opteron, the AMD logo, and the AMD Opteron logo are trademarks or registered trademarks of Advanced Micro Devices. UNIX is a registered trademark of The Open Group.
+Intel和Intel Inside是Intel公司的商标或注册商标。所有SPARC商标都是在授权下使用的，是SPARC国际公司的商标或注册商标。AMD、Epyc和AMD标志是Advanced Micro Devices的商标或注册商标。UNIX是The Open Group的注册商标。
 
-This software or hardware and documentation may provide access to or information about content, products, and services from third parties. Oracle Corporation and its affiliates are not responsible for and expressly disclaim all warranties of any kind with respect to third-party content, products, and services unless otherwise set forth in an applicable agreement between you and Oracle. Oracle Corporation and its affiliates will not be responsible for any loss, costs, or damages incurred due to your access to or use of third-party content, products, or services, except as set forth in an applicable agreement between you and Oracle.
+本软件或硬件和文档可能提供对第三方内容、产品和服务的访问或相关信息。甲骨文公司及其附属机构对第三方的内容、产品和服务不负责任，并明确拒绝提供任何形式的保证，除非您与甲骨文公司之间的适用协议中另有规定。甲骨文公司及其附属机构将不对由于您访问或使用第三方内容、产品或服务而产生的任何损失、费用或损害负责，除非您与甲骨文公司之间的适用协议中规定。
 
-This documentation is NOT distributed under a GPL license. Use of this documentation is subject to the following terms:
+本文档不是根据GPL许可证分发的。使用本文档须遵守以下条款。
 
-You may create a printed copy of this documentation solely for your own personal use. Conversion to other formats is allowed as long as the actual content is not altered or edited in any way. You shall not publish or distribute this documentation in any form or on any media, except if you distribute the documentation in a manner similar to how Oracle disseminates it (that is, electronically for download on a Web site with the software) or on a CD-ROM or similar medium, provided however that the documentation is disseminated together with the software on the same medium. Any other use, such as any dissemination of printed copies or use of this documentation, in whole or in part, in another publication, requires the prior written consent from an authorized representative of Oracle. Oracle and/or its affiliates reserve any and all rights to this documentation not expressly granted above.
+你可以为你自己的个人使用而创建本文档的打印副本。只要不以任何方式改变或编辑实际内容，就允许转换为其他格式。您不得以任何形式或在任何媒体上发表或传播本文档，除非您以类似于甲骨文公司传播文档的方式（即在网站上与软件一起以电子方式下载）或在CD-ROM或类似的媒介上传播，但前提是该文档是与软件一起在同一媒介上传播。任何其他用途，如任何印刷品的传播或在其他出版物中使用本文档的全部或部分内容，都需要事先获得甲骨文公司授权代表的书面同意。甲骨文公司和/或其附属机构保留对本文档的任何和所有权利，而不是上面明确授予的。
 
 ## 文档可访问性
 
-For information about Oracle's commitment to accessibility, visit the Oracle Accessibility Program website at http://www.oracle.com/pls/topic/lookup?ctx=acc&id=docacc.
+有关甲骨文对无障碍环境的承诺，请访问甲骨文无障碍计划网站：https://www.oracle.com/corporate/accessibility/。
 
 ## 获得 Oracle 支持
 
-Oracle customers that have purchased support have access to electronic support through My Oracle Support. For information, visit http://www.oracle.com/pls/topic/lookup?ctx=acc&id=info or visit http://www.oracle.com/pls/topic/lookup?ctx=acc&id=trs if you are hearing impaired.
+购买了支持的甲骨文客户可以通过我的甲骨文支持获得电子支持。有关信息，请访问https://www.oracle.com/corporate/accessibility/learning-support.html#support-tab。
