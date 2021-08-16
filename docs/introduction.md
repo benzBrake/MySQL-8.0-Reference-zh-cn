@@ -5,56 +5,52 @@ MySQL™软件提供了非常快速，多线程，多用户且健壮的SQL（结
 MySQL软件是双重许可的。 用户可以选择根据GNU通用公共许可证（[http://www.fsf.org/licenses/](http://www.fsf.org/licenses/)）的条款将MySQL软件用作开放源代码产品，也可以从 Oracle 购买标准的商业许可证。 有关我们的许可政策的更多信息，详见 [http://www.mysql.com/company/legal/licensing/](http://www.mysql.com/company/legal/licensing/) 。
 
 以下列表描述了本手册中特别有趣的章节：
-- 有关 MySQL 数据库服务器功能的讨论, 详见 [节 1.3.2, “The Main Features of MySQL”](#features). 
-- 有关 MySQL 新功能的概述, 详见 [节 1.4, “What Is New in MySQL 8.0”](#mysql-nutshell). 
-- For information about the changes in each version, see the [Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/). 
-- ​For installation instructions, see [Chapter 2, *Installing and Upgrading MySQL*](installing). For information about upgrading MySQL, see [Section 2.11, “Upgrading MySQL”](installing#upgrading) 
-- ​For a tutorial introduction to the MySQL Database Server, see [Chapter 3, *Tutorial*](tutorial). 
-- For information about configuring and administering MySQL Server, see [Chapter 5, *MySQL Server Administration*](server-administration). 
-- For information about security in MySQL, see [Chapter 6, *Security*](security). 
-- For information about setting up replication servers, see [Chapter 17, *Replication*](replication). 
-- For information about MySQL Enterprise, the commercial MySQL release with advanced features and management tools, see [Chapter 30, *MySQL Enterprise Edition*](mysql-enterprise). 
-- For answers to a number of questions that are often asked concerning the MySQL Database Server and its capabilities, see [Appendix A, *MySQL 8.0 Frequently Asked Questions*](faqs). 
-- For a history of new features and bug fixes, see the [Release Notes](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/).
+- 有关 MySQL 数据库服务器功能的讨论, 详见 [节 1.2.2, “MySQL 的主要特性”](#_122-mysql-的主要特性). 
+- 有关 MySQL 新功能的概述, 详见 [节 1.4, “MySQL 8.0 的新特性”](#mysql-nutshell). 
+- 有关每个版本的变化信息，请看 [发布说明](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/). 
+- 有关安装说明，请参阅[第2章，*安装和升级MySQL*](installing)。关于升级MySQL的信息，见[第2.11节，"升级MySQL"](installing#upgrading) 
+- 有关MySQL数据库服务器的教程介绍，见[第3章，*教程*](tutorial)。
+- 有关配置和管理MySQL服务器的信息，请参阅[第5章，*MySQL服务器管理*](server-administration)。
+- 有关MySQL的安全信息，请参见[第6章，*安全*](security)。
+- 有关设置复制服务器的信息，见[第17章，*复制*](replication)。
+- 有关MySQL企业版的信息，即具有高级功能和管理工具的商业MySQL版本，见[第30章，*MySQL企业版*](mysql-enterprise)。
+- 有关经常被问到的有关MySQL数据库服务器及其功能的一些问题的答案，见[附录A，*MySQL 8.0常见问题*](faqs)。
+- 有关新功能和错误修复的历史，请参见[发行说明](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/)。
 
 
- > **重要说明**
- > 
  > 要报告问题或错误，请使用[第1.7节“如何报告错误或问题”](＃bug-reports)中的说明。 如果您发现 MySQL Server 中的安全错误，请通过将电子邮件发送到<secalert_us@oracle.com>来立即通知我们。 例外：支持客户应向 Oracle 支持部门报告所有问题，包括安全错误。
 
 ## 1.1 关于手册
 
 这是8.0.23版之前的MySQL数据库系统8.0版的参考手册。 本文中以发行版本号（8.0.*`x` *）指出了MySQL 8.0的次要版本之间的差异。有关许可证的信息，请参见[法律声明](preface.md#法律声明)。
 
-​ This manual is not intended for use with older versions of the MySQL software due to the many functional and other differences between MySQL 8.0 and previous versions. If you are using an earlier release of the MySQL software, please refer to the appropriate manual. For example, [*MySQL 5.7 Reference Manual*](https://dev.mysql.com/doc/refman/5.7/en/) covers the 5.7 series of MySQL software releases. 
+由于MySQL 8.0与以前的版本在功能和其他方面存在许多差异，本手册不打算用于旧版本的MySQL软件。如果你使用的是MySQL软件的早期版本，请参考相应的手册。例如，[*MySQL 5.7参考手册*]（https://dev.mysql.com/doc/refman/5.7/en/）涵盖了5.7系列的MySQL软件版本。
 
-​ Because this manual serves as a reference, it does not provide general instruction on SQL or relational database concepts. It also does not teach you how to use your operating system or command-line interpreter. 
+由于本手册是作为参考资料，它不提供关于SQL或关系数据库概念的一般指导。也不会教你如何使用你的操作系统或命令行工具。
 
-​ The MySQL Database Software is under constant development, and the Reference Manual is updated frequently as well. The most recent version of the manual is available online in searchable form at https://dev.mysql.com/doc/. Other formats also are available there, including HTML, PDF, and EPUB versions. 
+MySQL数据库软件在不断发展，参考手册也经常更新。该手册的最新版本可以在网上以可搜索的形式获得：https://dev.mysql.com/doc/。其他格式也可以在那里找到，包括HTML、PDF和EPUB版本。
 
+参考手册的源文件是以DocBook XML格式编写的。HTML版本和其他格式是自动生成的，主要使用DocBook的XSL样式表。关于DocBook的信息，见http://docbook.org/  
 
+MySQL的源代码本身包含使用Doxygen编写的内部文档。生成的Doxygen内容可在https://dev.mysql.com/doc/index-other.html。也可以使用[第2.9.10节，"生成MySQL Doxygen文档内容"](installing#source-installation-doxygen)中的说明，从MySQL源分发中本地生成这些内容。
 
-​ The Reference Manual source files are written in DocBook XML format. The HTML version and other formats are produced automatically, primarily using the DocBook XSL stylesheets. For information about DocBook, see http://docbook.org/ 
+如果你有关于使用MySQL的问题，请加入[MySQL社区Slack](https://mysqlcommunity.slack.com/)，或在我们的论坛上提问；见[1.6.2节，"MySQL论坛的MySQL社区支持"](#forums)。如果你有关于手册本身的补充或更正的建议，请将它们发送到http://www.mysql.com/company/contact/。
 
-​ The source code for MySQL itself contains internal documentation written using Doxygen. The generated Doxygen content is available https://dev.mysql.com/doc/index-other.html. It is also possible to generate this content locally from a MySQL source distribution using the instructions at [Section 2.9.10, “Generating MySQL Doxygen Documentation Content”](installing#source-installation-doxygen). 
+本手册最初由David Axmark和Michael "Monty" Widenius编写。它由MySQL文档团队维护，团队成员包括Chris Cole、Paul DuBois、Margaret Fisher、Edward Gilmore、Stefan Hinz、David Moss、Philip Olson、Daniel Price、Daniel So和Jon Stephens。
 
-​ If you have questions about using MySQL, join the [MySQL Community Slack](https://mysqlcommunity.slack.com/), or ask in our forums; see [Section 1.6.2, “MySQL Community Support at the MySQL Forums”](#forums). If you have suggestions concerning additions or corrections to the manual itself, please send them to the http://www.mysql.com/company/contact/. 
-
-​ This manual was originally written by David Axmark and Michael “Monty” Widenius. It is maintained by the MySQL Documentation Team, consisting of Chris Cole, Paul DuBois, Margaret Fisher, Edward Gilmore, Stefan Hinz, David Moss, Philip Olson, Daniel Price, Daniel So, and Jon Stephens.
-
-## 1.2 格式和语法说明
+### 格式和语法说明
 
 本手册编写采用以下约定
 
-- `普通代码` 用于SQL语句、数据库名称、表明、列名、程序清单、源代码和环境变量；比如: 使用 [`FLUSH PRIVILEGES`](sql-statements.md#flush-privileges) 指令来刷新 grant 赋权结果。
-- **`加粗代码`** 指示您在示例中输入的内容。
-- **加粗文本** indicates the names of executable programs and scripts, examples being [**mysql**](programs#mysql) (the MySQL command-line client program) and [**mysqld**](programs#mysqld) (the MySQL server executable). 
-- *`斜体代码`* is used for variable input for which you should substitute a value of your own choosing. 
-- *斜体文本* is used for emphasis. 
-- **加粗文本** is used in table headings and to convey especially strong emphasis. 
-- `Text in this style` is used to indicate a program option that affects how the program is executed, or that supplies information that is needed for the program to function in a certain way. *Example*: “The `--host` option (short form `-h`) tells the [**mysql**](programs#mysql) client program the hostname or IP address of the MySQL server that it should connect to”. 
-- File names and directory names are written like this: “The global `my.cnf` file is located in the `/etc` directory.” 
-- Character sequences are written like this: “To specify a wildcard, use the ‘`%`’ character.”
+- `代码样式` 用于SQL语句、数据库名称、表明、列名、程序清单、源代码和环境变量；比如: 使用 [`FLUSH PRIVILEGES`](sql-statements.md#flush-privileges) 指令来刷新 grant 赋权结果。
+- **`加粗代码`** 表示您在示例中输入的内容。
+- **加粗文本** 表示可执行程序和脚本的名称，例子是[**mysql**](programs#mysql)MySQL命令行客户端程序）和[**mysqld**](programs#mysqld)（MySQL服务器可执行程序）。
+- *`斜体代码`* 表示变量输入，你应该用一个你自己选择的值来代替。
+- *斜体文本* 表示强调
+- ***加粗斜体* ** 用于表格标题和表达特别强烈的强调。
+- `选项文本` 用来表示影响程序执行方式的程序选项，或提供程序以某种方式运行所需的信息。*例子*: "`--host`选项（简称`-h`）告诉[**mysql**](programs#mysql)客户程序它应该连接到的MySQL服务器的主机名或IP地址"。
+- 文件名和目录名是这样写的："全局的`my.cnf`文件位于`/etc`目录下"。
+- 字符序列是这样写的："要指定一个通配符，请使用'`%`'字符。"
 
 命令前边如果存在提示符则说明命令需要在指定执行环境中运行。 例如， `shell>` 说明您命令需要从登录 shell 执行，root-shell>`说明命令需要以 root 用户执行，而`mysql>`说明命令需要在 MySQL 终端中执行：
 
@@ -64,235 +60,220 @@ root-shell> 以 root 用户执行 shell 语句
 mysql> SQL 语句
 ```
 
-在某些章节，可能会将不同的系统区分开来，以表明命令应在两个不同的环境中执行。 例如，在进行复制时，命令可能以`master`和`slave`为前缀：
+在某些章节，可能会将不同的系统区分开来，以表明命令应在两个不同的环境中执行。 例如，在进行复制时，命令可能以`source`和`replica`为前缀：
 
 ```
-master> 需要在主节点执行的命令
-slave> 需要在从节点执行的命令
+source> 需要在源节点执行的命令
+replica> 需要在复制节点执行的命令
 ```
 
 `shell` 是你的命令解释器。在 Unix 中，通常是**sh**, **csh** 或 **bash**。在 Windows 中, 类似的程序有 **command.com** 或者 **cmd.exe**, 通常在终端窗口中运行。
 
-​ When you enter a command or statement shown in an example, do not type the prompt shown in the example. 
+当你输入一个例子中显示的命令或语句时，不要输入例子中显示的提示。
 
-​ Database, table, and column names must often be substituted into statements. To indicate that such substitution is necessary, this manual uses *`db_name`*, *`tbl_name`*, and *`col_name`*. For example, you might see a statement like this: 
+数据库、表和列的名称经常必须被替换到语句中。为了表示这种替换是必要的，本手册使用*`db_name`*, *`tbl_name`*, 和*`col_name`*。例如，你可能会看到这样的语句。
 
 ```
 mysql> SELECT col_name FROM db_name.tbl_name;
 ```
 
-​ This means that if you were to enter a similar statement, you would supply your own database, table, and column names, perhaps like this: 
+这意味着，如果你要输入一个类似的语句，你将提供你自己的数据库、表和列名，也许像这样。
 
 ```
 mysql> SELECT author_name FROM biblio_db.author_list;
 ```
 
-​ SQL keywords are not case-sensitive and may be written in any lettercase. This manual uses uppercase. 
+ SQL关键字不区分大小写，可以用任何字母大写来书写。本手册使用大写字母。
 
-​ In syntax descriptions, square brackets (“`[`” and “`]`”) indicate optional words or clauses. For example, in the following statement, `IF EXISTS` is optional: 
+ 在语法描述中，方括号（"`[`"和"`]`"）表示可选的词或子句。例如，在下面的语句中，`IF EXISTS`是可选的。
 
 ```
 DROP TABLE [IF EXISTS] tbl_name
 ```
 
-​ When a syntax element consists of a number of alternatives, the alternatives are separated by vertical bars (“`|`”). When one member from a set of choices *may* be chosen, the alternatives are listed within square brackets (“`[`” and “`]`”): 
+当一个语法元素由多个备选方案组成时，这些备选方案用竖条（"`|`"）分隔。当一组选择中的一个成员*可能被选择时，这些选择被列在方括号内（"`[`"和"`]`"）。
 
 ```
 TRIM([[BOTH | LEADING | TRAILING] [remstr] FROM] str)
 ```
 
-​ When one member from a set of choices *must* be chosen, the alternatives are listed within braces (“`{`” and “`}`”): 
+当必须从一组选择中选择一个成员时，备选方案被列在大括号内（"`{`"和"`}`"）。
 
 ```
 {DESCRIBE | DESC} tbl_name [col_name | wild]
 ```
 
-​ An ellipsis (`...`) indicates the omission of a section of a statement, typically to provide a shorter version of more complex syntax. For example, [`SELECT ... INTO  OUTFILE`](sql-statements.html#select) is shorthand for the form of [`SELECT`](sql-statements.html#select) statement that has an `INTO OUTFILE` clause following other parts of the statement. 
+省略号(`...`)表示省略语句的某一部分，通常是为了提供更复杂语法的简短版本。例如，[`SELECT ... INTO OUTFILE`](sql-statements.html#select)是[`SELECT`](sql-statements.html#select)语句形式的速记，该语句的其他部分后面有一个`INTO OUTFILE`条款。
 
-​ An ellipsis can also indicate that the preceding syntax element of a statement may be repeated. In the following example, multiple *`reset_option`* values may be given, with each of those after the first preceded by commas: 
+省略号也可以表示语句中前面的语法元素可以重复。在下面的例子中，可以给出多个*`reset_option`*值，在第一个值之后的每个值前面都有逗号。
 
 ```
 RESET reset_option [,reset_option] ...
 ```
 
-​ Commands for setting shell variables are shown using Bourne shell syntax. For example, the sequence to set the `CC` environment variable and run the **configure** command looks like this in Bourne shell syntax: 
+设置shell变量的命令使用Bourne shell语法显示。例如，设置`CC`环境变量和运行**configure**命令的顺序在Bourne shell语法中是这样的。 
 
 ```
 shell> CC=gcc ./configure
 ```
 
-
-
-如果你使用的是 **csh** 或者 **tcsh**，you must issue commands somewhat differently: 
+如果你使用**csh**或**tcsh**，你必须以某种不同的方式发布命令。 
 
 ```
 shell> setenv CC gcc
 shell> ./configure
 ```
 
-## 1.3 MySQL 数据库管理系统概述
+## 1.2 MySQL 数据库管理系统概述
 
-- [1.3.1 MySQL 是啥?](#_131-mysql-是啥)
-- [1.3.2 MySQL 的主要特性](#features)
-- [1.3.3 History of MySQL](#history)
+### 1.2.1 MySQL 是啥?
 
-### 1.3.1 MySQL 是啥?
+MySQL是最流行的开源SQL数据库管理系统，由甲骨文公司开发、发布和支持。   
 
-MySQL是最流行的开源SQL数据库管理系统，由 Oracle Corporation 开发，分发和支持。
+MySQL网站（http://www.mysql.com/）提供关于MySQL软件的最新信息。
 
-MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件的最新信息。
+- **MySQL是一个数据库管理系统**。 
 
-- ** MySQL是一个数据库管理系统。**
+  数据库是一个结构化的数据集合。它可能是任何东西，从简单的购物清单到图片库，或者是企业网络中的大量信息。为了添加、访问和处理存储在计算机数据库中的数据，你需要一个数据库管理系统，如MySQL服务器。由于计算机非常善于处理大量的数据，数据库管理系统在计算中发挥着核心作用，作为独立的实用工具，或作为其他应用程序的一部分。   
 
-数据库是结构化的数据集合。 从简单的购物清单到图片库，或者企业网络中的大量信息，它都可以是任何东西。 要添加，访问和处理存储在计算机数据库中的数据，您需要一个数据库管理系统，例如MySQL Server。 由于计算机非常擅长处理大量数据，因此数据库管理系统作为独立实用程序或其他应用程序的一部分，在计算中起着核心作用。
+- **MySQL数据库是关系型的**。  
 
-- ** MySQL数据库是关系数据库。**
+  关系型数据库将数据存储在不同的表中，而不是将所有的数据放在一个大仓库里。数据库结构被组织成物理文件，为速度而优化。逻辑模型，有数据库、表、视图、行和列等对象，提供了一个灵活的编程环境。你设置了管理不同数据字段之间关系的规则，如一对一、一对多、唯一、必需或可选，以及不同表之间的 "指针"。数据库强制执行这些规则，因此有了设计良好的数据库，你的应用程序永远不会看到不一致的、重复的、孤儿的、过时的或缺失的数据。     
 
-关系数据库将数据存储在单独的表中，而不是将所有数据放在一个库中。数据库结构被组织成针对速度进行了优化的物理文件。具有对象（例如数据库，表，视图，行和列）的逻辑模型提供了灵活的编程环境。您可以设置规则来管理不同数据字段之间的关系，例如一对一，一对多，唯一，必需或可选以及不同表之间的“指针”。数据库强制执行这些规则，因此，使用设计良好的数据库，您的应用程序将永远不会看到不一致，重复，孤立，孤立，过时或丢失的数据。
+  MySQL的SQL指 "结构化查询语言"。SQL是用于访问数据库的最常用的标准化语言。根据你的编程环境，你可能直接输入SQL（例如，生成报告），将SQL语句嵌入用其他语言编写的代码中，或使用隐藏SQL语法的特定语言API。        
 
- ​ The SQL part of “MySQL” stands for “Structured Query Language”. SQL is the most common standardized language used to access databases. Depending on your programming environment, you might enter SQL directly (for example, to generate reports), embed SQL statements into code written in another language, or use a language-specific API that hides the SQL syntax. 
+  SQL是由ANSI/ISO SQL标准定义的。自1986年以来，SQL标准一直在不断发展，并有多个版本。在本手册中，"SQL-92 "是指1992年发布的标准，"SQL:1999 "是指1999年发布的标准，而 "SQL:2003 "是指当前版本的标准。我们使用 "SQL标准 "这一短语来指任何时候的SQL标准的当前版本。  
 
- ​ SQL is defined by the ANSI/ISO SQL Standard. The SQL standard has been evolving since 1986 and several versions exist. In this manual, “SQL-92” refers to the standard released in 1992, “SQL:1999” refers to the standard released in 1999, and “SQL:2003” refers to the current version of the standard. We use the phrase “the SQL standard” to mean the current version of the SQL Standard at any time. 
+- **MySQL软件是开源的**。       
 
-- **MySQL software is Open Source.** 
+   开源意味着任何人都有可能使用和修改该软件。任何人都可以从互联网上下载MySQL软件并使用它而不需要支付任何费用。如果你愿意，你可以研究源代码并根据你的需要进行修改。MySQL软件使用GPL（GNU通用公共许可证），http://www.fsf.org/licenses/，来定义你在不同情况下可以和不可以对软件做什么。如果你对GPL感到不舒服，或需要将MySQL代码嵌入商业应用中，你可以从我们这里购买商业许可版本。更多信息请参见MySQL许可概述（http://www.mysql.com/company/legal/licensing/）。   
 
- ​ Open Source means that it is possible for anyone to use and modify the software. Anybody can download the MySQL software from the Internet and use it without paying anything. If you wish, you may study the source code and change it to suit your needs. The MySQL software uses the GPL (GNU General Public License), http://www.fsf.org/licenses/, to define what you may and may not do with the software in different situations. If you feel uncomfortable with the GPL or need to embed MySQL code into a commercial application, you can buy a commercially licensed version from us. See the MySQL Licensing Overview for more information (http://www.mysql.com/company/legal/licensing/). 
+- **MySQL数据库服务器非常快速、可靠、可扩展，而且易于使用**。     
 
-- **The MySQL Database Server is very fast, reliable, scalable, and easy to use.** 
+  如果这是你正在寻找的，你应该试一试。MySQL服务器可以舒适地运行在台式机或笔记本电脑上，与你的其他应用程序、网络服务器等一起运行，几乎不需要专门处理。如果你把整台机器给MySQL用，你可以调整设置以利用所有可用的内存、CPU功率和I/O容量。MySQL还可以扩展到机器的集群，并将其连在一起。       
 
- ​ If that is what you are looking for, you should give it a try. MySQL Server can run comfortably on a desktop or laptop, alongside your other applications, web servers, and so on, requiring little or no attention. If you dedicate an entire machine to MySQL, you can adjust the settings to take advantage of all the memory, CPU power, and I/O capacity available. MySQL can also scale up to clusters of machines, networked together. 
+  MySQL服务器最初是为了处理大型数据库而开发的，比现有的解决方案快得多，几年来已成功地用于高要求的生产环境中。尽管在不断的发展中，MySQL服务器今天提供了一套丰富而有用的功能。它的连接性、速度和安全性使MySQL服务器非常适用于访问互联网上的数据库。     
 
- ​ MySQL Server was originally developed to handle large databases much faster than existing solutions and has been successfully used in highly demanding production environments for several years. Although under constant development, MySQL Server today offers a rich and useful set of functions. Its connectivity, speed, and security make MySQL Server highly suited for accessing databases on the Internet. 
+- **MySQL服务器在客户端/服务器或嵌入式系统中工作**。       
 
-- **MySQL Server works in client/server or embedded systems.** 
+  MySQL数据库软件是一个客户/服务器系统，由一个支持不同后端的多线程SQL服务器、几个不同的客户程序和库、管理工具和广泛的应用编程接口（API）组成。       
 
- ​ The MySQL Database Software is a client/server system that consists of a multithreaded SQL server that supports different back ends, several different client programs and libraries, administrative tools, and a wide range of application programming interfaces (APIs). 
+  我们还提供MySQL服务器作为一个嵌入式多线程库，你可以将其链接到你的应用程序中，以获得一个更小、更快、更易于管理的独立产品。     
 
- ​ We also provide MySQL Server as an embedded multithreaded library that you can link into your application to get a smaller, faster, easier-to-manage standalone product. 
+-  **大量贡献的MySQL软件是可用的**。
 
-- **A large amount of contributed MySQL software is available.** 
+  MySQL服务器有一套实用的功能，是与我们的用户密切合作开发的。很有可能你最喜欢的应用程序或语言支持MySQL数据库服务器。
 
- ​ MySQL Server has a practical set of features developed in close cooperation with our users. It is very likely that your favorite application or language supports the MySQL Database Server.
+MySQL "的官方发音是 "My Ess Que Ell"（不是 "my sequel"），但我们不介意你把它念成 "my sequel "或以其他本地化方式发音。
 
+### 1.2.2 MySQL 的主要特性
 
-​ The official way to pronounce “MySQL” is “My Ess Que Ell” (not “my sequel”), but we do not mind if you pronounce it as “my sequel” or in some other localized way.
-
-### 1.3.2 MySQL 的主要特性
-
-本节描述了MySQL数据库软件的一些重要特征。 在大多数方面，该路线图适用于所有版本的MySQL。 有关按系列特定功能引入MySQL的功能的信息，请参见相应手册的“特性”部分：
+本节介绍了MySQL数据库软件的一些重要特征。在大多数方面，该路线图适用于MySQL的所有版本。有关在特定系列基础上引入MySQL的特性的信息，请参见相应手册中的 "简明扼要 "部分。
 
 - MySQL 8.0: [节 1.4, “MySQL 8.0 有什么新特性”](#_14-MySQL-80-有什么新特性) 
 - MySQL 5.7: [MySQL 5.7 有什么新特性](https://dev.mysql.com/doc/refman/5.7/en/mysql-nutshell.html) 
 - MySQL 5.6: [MySQL 5.6 有什么新特性](https://dev.mysql.com/doc/refman/5.6/en/mysql-nutshell.html)
 
-#### 内部说明和便携性
+#### 内部和可移植性
 
-- 使用 C 和 C++ 编写. 
-- 广泛的经过不同编译器测试。
-- 在不同平台上都能运行详见 [https://www.mysql.com/support/supportedplatforms/database.html]()。 
-- For portability, configured using **CMake**. 
-- Tested with Purify (a commercial memory leakage detector) as well as with Valgrind, a GPL tool (http://developer.kde.org/~sewardj/). 
-- Uses multi-layered server design with independent modules. 
-- Designed to be fully multithreaded using kernel threads, to easily use multiple CPUs if they are available. 
-- Provides transactional and nontransactional storage engines. 
-- Uses very fast B-tree disk tables (`MyISAM`) with index compression. 
-- Designed to make it relatively easy to add other storage engines. This is useful if you want to provide an SQL interface for an in-house database. 
-- Uses a very fast thread-based memory allocation system. 
-- Executes very fast joins using an optimized nested-loop join. 
-- Implements in-memory hash tables, which are used as temporary tables. 
-- Implements SQL functions using a highly optimized class library that should be as fast as possible. Usually there is no memory allocation at all after query initialization. 
-- Provides the server as a separate program for use in a client/server networked environment, and as a library that can be embedded (linked) into standalone applications. Such applications can be used in isolation or in environments where no network is available.
+- 用C和C++编写。       
+- 用广泛的不同的编译器进行测试。       
+- 在许多不同的平台上工作。见https://www.mysql.com/support/supportedplatforms/database.html。       
+- 为了便于移植，使用**CMake**进行配置。       
+- 用Purify（一个商业内存泄漏检测器）以及Valgrind（一个GPL工具）进行测试（http://developer.kde.org/~sewardj/）。       
+- 使用具有独立模块的多层服务器设计。       
+- 设计成使用内核线程的完全多线程，如果有多个CPU，可以轻松使用。       
+- 提供交易性和非交易性存储引擎。       
+- 使用非常快的B树磁盘表（`MyISAM`），带有索引压缩。       
+- 旨在使添加其他存储引擎相对容易。如果你想为内部数据库提供一个SQL接口，这很有用。       
+- 使用一个非常快的基于线程的内存分配系统。       
+- 使用优化的嵌套循环连接，执行非常快的连接。       
+- 实施内存哈希表，作为临时表使用。       
+- 使用高度优化的类库执行SQL函数，其速度应尽可能快。通常，在查询初始化之后，根本没有内存分配。       
+- 将服务器作为一个独立的程序提供给客户/服务器网络环境中使用，并作为一个库，可以嵌入（链接）到独立的应用程序中。这样的应用程序可以隔离使用或在没有网络的环境中使用。
 
-#### Data Types
+#### 数据类型
 
-- Many data types: signed/unsigned integers 1, 2, 3, 4, and 8 bytes long, [`FLOAT`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#floating-point-types), [`DOUBLE`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#floating-point-types), [`CHAR`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#char), [`VARCHAR`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#char), [`BINARY`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#binary-varbinary), [`VARBINARY`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#binary-varbinary), [`TEXT`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#blob), [`BLOB`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#blob), [`DATE`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#datetime), [`TIME`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#time), [`DATETIME`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#datetime), [`TIMESTAMP`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#datetime), [`YEAR`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#year), [`SET`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set), [`ENUM`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum), and OpenGIS spatial types. See [Chapter 11, *Data Types*](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html). 
-- Fixed-length and variable-length string types.
+- 许多数据类型：1、2、3、4和8字节长的有符号/无符号整数，[`FLOAT`](https://dev.mysql.com/doc/refman/8.0/en/floating-point-types.html), [`DOUBLE`](https://dev.mysql.com/doc/refman/8.0/en/floating-point-types.html), [`CHAR`](https://dev.mysql.com/doc/refman/8.0/en/char.html), [`VARCHAR`](https://dev.mysql.com/doc/refman/8.0/en/char.html), [`BINARY`](https://dev.mysql.com/doc/refman/8.0/en/binary-varbinary.html), [`VARBINARY`](https://dev.mysql.com/doc/refman/8.0/en/binary-varbinary.html), [`TEXT`](https://dev.mysql.com/doc/refman/8.0/en/blob.html), [`BLOB`](https://dev.mysql.com/doc/refman/8.0/en/blob.html), [`DATE`](https://dev.mysql.com/doc/refman/8.0/en/datetime.html), [`TIME`](https://dev.mysql.com/doc/refman/8.0/en/time.html), [`DATETIME`](https://dev.mysql.com/doc/refman/8.0/en/datetime.html), [`TIMESTAMP`](https://dev.mysql.com/doc/refman/8.0/en/datetime.html), [`YEAR`](https://dev.mysql.com/doc/refman/8.0/en/year.html), [`SET`](https://dev.mysql.com/doc/refman/8.0/en/set.html), [`ENUM`](https://dev.mysql.com/doc/refman/8.0/en/enum.html) 以及OpenGIS空间类型. 参见[第11章，*数据类型*](https://dev.mysql.com/doc/refman/8.0/en/data-types.html)。       
+- 固定长度和可变长度的字符串类型。
 
-#### Statements and Functions
+#### 语句和函数
 
-- Full operator and function support in the [`SELECT`](sql-statements.html#select) list and `WHERE` clause of queries. For example: 
+- 在查询的[`SELECT`](sql-statements.html#select)列表和`WHERE`子句中支持全部操作符和函数。比如说。
 
- ```
+ ```sql
  mysql> SELECT CONCAT(first_name, ' ', last_name)
- -> FROM citizen
- -> WHERE income/dependents > 10000 AND age > 30;
+     -> FROM citizen
+     -> WHERE income/dependents > 10000 AND age > 30;
  ```
 
-- Full support for SQL `GROUP BY` and `ORDER BY` clauses. Support for group functions ([`COUNT()`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#function_count), [`AVG()`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#function_avg), [`STD()`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#function_std), [`SUM()`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#function_sum), [`MAX()`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#function_max), [`MIN()`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#function_min), and [`GROUP_CONCAT()`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#function_group-concat)). 
+完全支持SQL的`GROUP BY`和`ORDER BY`子句。支持分组函数（[`COUNT()`](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_count), [`AVG()`](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_avg), [`STD()`](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_std), [`SUM()`](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_sum), [`MAX()`](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_max), [`MIN()`](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_min), 和 [`GROUP_CONCAT()`](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_group-concat) ）。       
 
-- Support for `LEFT OUTER JOIN` and `RIGHT OUTER JOIN` with both standard SQL and ODBC syntax. 
+支持标准SQL和ODBC语法的 `LEFT OUTER JOIN `和 `RIGHT OUTER JOIN`。       
 
-- Support for aliases on tables and columns as required by standard SQL. 
+支持标准SQL所要求的表和列的别名。       
 
-- Support for [`DELETE`](sql-statements.html#delete), [`INSERT`](sql-statements.html#insert), [`REPLACE`](sql-statements.html#replace), and [`UPDATE`](sql-statements.html#update) to return the number of rows that were changed (affected), or to return the number of rows matched instead by setting a flag when connecting to the server. 
+支持[`DELETE`](https://dev.mysql.com/doc/refman/8.0/en/delete.html), [`INSERT`](https://dev.mysql.com/doc/refman/8.0/en/insert.html), [`REPLACE`](https://dev.mysql.com/doc/refman/8.0/en/replace.html), 和 [`UPDATE`](https://dev.mysql.com/doc/refman/8.0/en/update.html)返回被改变（影响）的行数，或者通过在连接服务器时设置一个标志来代替返回匹配行数。       
 
-- Support for MySQL-specific [`SHOW`](sql-statements.html#show) statements that retrieve information about databases, storage engines, tables, and indexes. Support for the `INFORMATION_SCHEMA` database, implemented according to standard SQL. 
+支持MySQL特定的[`SHOW`](https://dev.mysql.com/doc/refman/8.0/en/show.html)语句，检索有关数据库、存储引擎、表和索引的信息。支持`INFORMATION_SCHEMA`数据库，根据标准SQL实现。       
 
-- An [`EXPLAIN`](sql-statements.html#explain) statement to show how the optimizer resolves a query. 
+一个[`EXPLAIN`](https://dev.mysql.com/doc/refman/8.0/en/explain.html)语句，显示优化器如何解决一个查询。       
 
-- Independence of function names from table or column names. For example, `ABS` is a valid column name. The only restriction is that for a function call, no spaces are permitted between the function name and the “`(`” that follows it. See [Section 9.3, “Keywords and Reserved Words”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/language-structure.html#keywords). 
+函数名与表或列名的独立性。例如，`ABS`是一个有效的列名。唯一的限制是，对于一个函数调用，在函数名和后面的"`(`) "之间不允许有空格。参见[第9.3节，"关键词和保留字"](https://dev.mysql.com/doc/refman/8.0/en/keywords.html)。       
 
-- You can refer to tables from different databases in the same statement.
+你可以在同一语句中引用不同数据库的表。
 
 #### 安全
 
-- A privilege and password system that is very flexible and secure, and that enables host-based verification. 
-- Password security by encryption of all password traffic when you connect to a server.
+- MySQL拥有一个非常灵活和安全的权限和密码系统，并能实现基于主机的验证。
+- 当你连接到服务器时，通过对所有密码流量进行加密来保证密码安全。
 
-#### Scalability and Limits
+#### 可扩展性和局限性
 
-- Support for large databases. We use MySQL Server with databases that contain 50 million records. We also know of users who use MySQL Server with 200,000 tables and about 5,000,000,000 rows. 
-- Support for up to 64 indexes per table. Each index may consist of 1 to 16 columns or parts of columns. The maximum index width for [`InnoDB`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/innodb-storage-engine.html) tables is either 767 bytes or 3072 bytes. See [Section 15.22, “InnoDB Limits”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/innodb-storage-engine.html#innodb-limits). The maximum index width for [`MyISAM`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/storage-engines.html#myisam-storage-engine) tables is 1000 bytes. See [Section 16.2, “The MyISAM Storage Engine”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/storage-engines.html#myisam-storage-engine). An index may use a prefix of a column for [`CHAR`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#char), [`VARCHAR`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#char), [`BLOB`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#blob), or [`TEXT`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#blob) column types.
+- 对大型数据库的支持。我们使用 MySQL 服务器的数据库可存储多达 5000 万条记录。我们还知道有些用户使用 MySQL Server 存储有20万个表和大约5,000,000,000行。       
+- 每张表最多支持64个索引。每个索引可以由1到16列或部分列组成。[`InnoDB`](https://dev.mysql.com/doc/refman/8.0/en/innodb-storage-engine.html)表的最大索引宽度是767字节或3072字节。参见[第15.22节，"InnoDB的限制"](https://dev.mysql.com/doc/refman/8.0/en/innodb-limits.html)。         [`MyISAM`](https://dev.mysql.com/doc/refman/8.0/en/myisam-storage-engine.html)表的最大索引宽度是1000字节。参见[第16.2节, "MyISAM存储引擎"](https://dev.mysql.com/doc/refman/8.0/en/myisam-storage-engine.html)。索引可以使用[`CHAR`](https://dev.mysql.com/doc/refman/8.0/en/char.html), [`VARCHAR`](https://dev.mysql.com/doc/refman/8.0/en/char.html), [`BLOB`](https://dev.mysql.com/doc/refman/8.0/en/blob.html), 或 [`TEXT`](https://dev.mysql.com/doc/refman/8.0/en/blob.html)列类型的前缀。
 
-#### Connectivity
+#### 连接数据库
 
-- Clients can connect to MySQL Server using several protocols:
- - Clients can connect using TCP/IP sockets on any platform.  
- - On Windows systems, clients can connect using named pipes if the server is started with the [`named_pipe`](server-administration#sysvar_named_pipe) system variable enabled. Windows servers also support shared-memory connections if started with the [`shared_memory`](server-administration#sysvar_shared_memory) system variable enabled. Clients can connect through shared memory by using the [`--protocol=memory`](programs#option_general_protocol) option.  
- - On Unix systems, clients can connect using Unix domain socket files.
-- MySQL client programs can be written in many languages. A client library written in C is available for clients written in C or C++, or for any language that provides C bindings. 
-- APIs for C, C++, Eiffel, Java, Perl, PHP, Python, Ruby, and Tcl are available, enabling MySQL clients to be written in many languages. See [Chapter 28, *Connectors and APIs*](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/connectors-apis.html). 
-- The Connector/ODBC (MyODBC) interface provides MySQL support for client programs that use ODBC (Open Database Connectivity) connections. For example, you can use MS Access to connect to your MySQL server. Clients can be run on Windows or Unix. Connector/ODBC source is available. All ODBC 2.5 functions are supported, as are many others. See [MySQL Connector/ODBC Developer Guide](https://dev.mysql.com/doc/connector-odbc/en/). 
-- The Connector/J interface provides MySQL support for Java client programs that use JDBC connections. Clients can be run on Windows or Unix. Connector/J source is available. See [MySQL Connector/J 5.1 Developer Guide](https://dev.mysql.com/doc/connector-j/5.1/en/). 
-- MySQL Connector/NET enables developers to easily create .NET applications that require secure, high-performance data connectivity with MySQL. It implements the required ADO.NET interfaces and integrates into ADO.NET aware tools. Developers can build applications using their choice of .NET languages. MySQL Connector/NET is a fully managed ADO.NET driver written in 100% pure C#. See [MySQL Connector/NET Developer Guide](https://dev.mysql.com/doc/connector-net/en/).
+- 客户端可以使用几种协议连接到MySQL服务器。
+  - 客户端可以在任何平台上使用TCP/IP套接字进行连接。           
+  - 在Windows系统上，如果服务器在启动时启用了[`named_pipe`](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_named_pipe)系统变量，客户可以使用命名管道进行连接。如果在启动时启用[`shared_memory`](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_shared_memory)系统变量，Windows服务器也支持共享内存连接。客户端可以通过使用[`--protocol=memory`](https://dev.mysql.com/doc/refman/8.0/en/connection-options.html#option_general_protocol)选项，通过共享内存进行连接。           
+  - 在Unix系统上，客户端可以使用Unix域套接字文件进行连接。
+- MySQL客户端程序可以用许多语言编写。用C语言编写的客户端库可用于用C或C++编写的客户端，或用于任何提供C绑定的语言。       
+- C、C++、Eiffel、Java、Perl、PHP、Python、Ruby和Tcl的API可用，使MySQL客户端可以用许多语言编写。参见[第29章，*Connectors and APIs*](https://dev.mysql.com/doc/refman/8.0/en/connectors-apis.html)。       
+- 连接器/ODBC（MyODBC）接口为使用ODBC（开放数据库连接）连接的客户端程序提供MySQL支持。例如，你可以使用MS Access来连接到你的MySQL服务器。客户端可以在Windows或Unix上运行。         连接器/ODBC源是可用的。所有的ODBC 2.5功能都被支持，其他许多功能也是如此。参见[MySQL Connector/ODBC开发者指南](https://dev.mysql.com/doc/connector-odbc/en/)。       
+- Connector/J接口为使用JDBC连接的Java客户端程序提供MySQL支持。客户端可以在Windows或Unix上运行。Connector/J的源代码是可用的。参见[MySQL Connector/J 5.1 Developer Guide](https://dev.mysql.com/doc/connector-j/5.1/en/)。       
+- MySQL Connector/NET使开发人员能够轻松地创建需要与MySQL进行安全、高性能数据连接的.NET应用程序。它实现了所需的ADO.NET接口并集成到ADO.NET感知工具中。开发人员可以使用他们选择的.NET语言构建应用程序。MySQL Connector/NET是一个完全管理的ADO.NET驱动程序，由100%纯C#编写。参见[MySQL Connector/NET开发者指南](https://dev.mysql.com/doc/connector-net/en/)。
 
 #### 本地化
 
-- The server can provide error messages to clients in many languages. See [Section 10.12, “Setting the Error Message Language”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/charset.html#error-message-language). 
-- Full support for several different character sets, including `latin1` (cp1252), `german`, `big5`, `ujis`, several Unicode character sets, and more. For example, the Scandinavian characters “`å`”, “`ä`” and “`ö`” are permitted in table and column names. 
-- All data is saved in the chosen character set. 
-- Sorting and comparisons are done according to the default character set and collation. is possible to change this when the MySQL server is started (see [Section 10.3.2, “Server Character Set and Collation”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/charset.html#charset-server)). To see an example of very advanced sorting, look at the Czech sorting code. MySQL Server supports many different character sets that can be specified at compile time and runtime. 
-- The server time zone can be changed dynamically, and individual clients can specify their own time zone. See [Section 5.1.14, “MySQL Server Time Zone Support”](server-administration#time-zone-support).
+- 服务器可以用多种语言向客户提供错误信息。见[第10.12节，"设置错误信息语言"](https://dev.mysql.com/doc/refman/8.0/en/error-message-language.html)。       
+- 完全支持几种不同的字符集，包括`latin1`（cp1252）、`german`、`big5`、`ujis`、几种Unicode字符集，以及更多。例如，斯堪的纳维亚字符"`å`"、"`ä`"和"`ö`"在表和列名中是允许的。       
+- 所有数据都保存在所选择的字符集中。       
+- 排序和比较根据默认的字符集和校对进行。当MySQL服务器启动时，可以改变这一点（见[第10.3.2节，"服务器字符集和校对"](https://dev.mysql.com/doc/refman/8.0/en/charset-server.html)。要看一个非常高级的排序的例子，请看捷克的排序代码。MySQL服务器支持许多不同的字符集，可以在编译时和运行时指定。       
+- 服务器时区可以动态改变，个别客户可以指定自己的时区。参见[第5.1.15节，"MySQL服务器时区支持"](https://dev.mysql.com/doc/refman/8.0/en/time-zone-support.html)。
 
 #### 客户端和工具
 
-- MySQL includes several client and utility programs. These include both command-line programs such as [**mysqldump**](programs#mysqldump) and [**mysqladmin**](programs#mysqladmin), and graphical programs such as [MySQL Workbench](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/workbench.html). 
-- MySQL Server has built-in support for SQL statements to check, optimize, and repair tables. These statements are available from the command line through the [**mysqlcheck**](programs#mysqlcheck) client. MySQL also includes [**myisamchk**](programs#myisamchk), a very fast command-line utility for performing these operations on `MyISAM` tables. See [Chapter 4, *MySQL Programs*](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/programs.html). 
-- MySQL programs can be invoked with the `--help` or `-?` option to obtain online assistance.
+- MySQL包括几个客户端和实用程序。这些程序包括命令行程序，如[**mysqldump**](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)和[**mysqladmin**](https://dev.mysql.com/doc/refman/8.0/en/mysqladmin.html)，以及图形程序，如[MySQL Workbench](https://dev.mysql.com/doc/refman/8.0/en/workbench.html)。       
+- MySQL服务器内置了对SQL语句的支持，以检查、优化和修复表。这些语句可以通过[**mysqlcheck**](https://dev.mysql.com/doc/refman/8.0/en/mysqlcheck.html)客户端从命令行获得。MySQL还包括[**myisamchk**](https://dev.mysql.com/doc/refman/8.0/en/myisamchk.html)，这是一个非常快速的命令行工具，用于在`MyISAM`表上执行这些操作。参见[第4章，*MySQL程序*](https://dev.mysql.com/doc/refman/8.0/en/programs.html)。       
+- 可以用`--help`或`-?`选项来调用MySQL程序以获得在线帮助。
 
 ### 1.3.3 MySQL 的历史
 
+我们一开始打算使用mSQL的快速低级（ISAM）例程连接到我们的数据库进行数据表管理。然而，经过一些测试，我们得出结论，mSQL的速度和灵活性都不足以满足我们的需求。这导致了我们开发了一个新的SQL接口，但其API接口几乎与mSQL相同。这个API的设计是为了使为使用mSQL而编写的第三方代码能够容易地移植到MySQL上使用。
 
+MySQL是以联合创始人Monty Widenius的女儿My命名的。
 
-​ We started out with the intention of using the `mSQL` database system to connect to our tables using our own fast low-level (ISAM) routines. However, after some testing, we came to the conclusion that `mSQL` was not fast enough or flexible enough for our needs. This resulted in a new SQL interface to our database but with almost the same API interface as `mSQL`. This API was designed to enable third-party code that was written for use with `mSQL` to be ported easily for use with MySQL. 
+MySQL海豚（我们的标志）的名字是 "Sakila"，这是从我们的 "为海豚起名 "比赛中用户建议的大量名字中选出的。获奖的名字是由Ambrose Twebaze提交的，他是来自非洲埃斯瓦蒂尼（原斯威士兰）的开源软件开发者。据Ambrose说，女性的名字Sakila起源于埃斯瓦蒂尼的当地语言SiSwati。萨基拉也是坦桑尼亚阿鲁沙的一个小镇的名字，靠近安布罗斯的原籍国乌干达。
 
-​ MySQL is named after co-founder Monty Widenius's daughter, My. 
+## 1.3 MySQL 8.0 有什么新特性
 
-​ The name of the MySQL Dolphin (our logo) is “Sakila,” which was chosen from a huge list of names suggested by users in our “Name the Dolphin” contest. The winning name was submitted by Ambrose Twebaze, an Open Source software developer from Eswatini (formerly Swaziland), Africa. According to Ambrose, the feminine name Sakila has its roots in SiSwati, the local language of Eswatini. Sakila is also the name of a town in Arusha, Tanzania, near Ambrose's country of origin, Uganda.
+本节总结了在MySQL 8.0中添加、废弃和删除的内容。一部分列出了在MySQL 8.0中增加、废弃或删除的MySQL服务器选项和变量；见[1.4节，"MySQL 8.0中增加、废弃或删除的服务器和状态变量和选项"](https://dev.mysql.com/doc/refman/8.0/en/added-deprecated-removed.html)。
 
-## 1.4 MySQL 8.0 有什么新特性
+### MySQL 8.0中增加的功能
 
-​ This section summarizes what has been added to, deprecated in, and removed from MySQL 8.0. A companion section lists MySQL server options and variables that have been added, deprecated, or removed in MySQL 8.0. See [Section 1.5, “Server and Status Variables and Options Added, Deprecated, or Removed in  MySQL 8.0”](#added-deprecated-removed).
-
-- [Features Added in MySQL 8.0](#mysql-nutshell-additions) 
-- [Features Deprecated in MySQL 8.0](#mysql-nutshell-deprecations) 
-- [Features Removed in MySQL 8.0](#mysql-nutshell-removals)
-
-### Features Added in MySQL 8.0
-
-
-
-​ The following features have been added to MySQL 8.0:
+ The following features have been added to MySQL 8.0:
 
 - **Data dictionary.** MySQL now incorporates a transactional data dictionary that stores information about database objects. In previous MySQL releases, dictionary data was stored in metadata files and nontransactional tables. For more information, see [Chapter 14, *MySQL Data Dictionary*](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-dictionary.html).  
 
@@ -1322,9 +1303,9 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 
 
 
-​ The following features are deprecated in MySQL 8.0 and may be or will be removed in a future series. Where alternatives are shown, applications should be updated to use them. 
+ The following features are deprecated in MySQL 8.0 and may be or will be removed in a future series. Where alternatives are shown, applications should be updated to use them. 
 
-​ For applications that use features deprecated in MySQL 8.0 that have been removed in a higher MySQL series, statements may fail when replicated from a MySQL 8.0 master to a higher-series slave, or may have different effects on master and slave. To avoid such problems, applications that use features deprecated in 8.0 should be revised to avoid them and use alternatives when possible.
+ For applications that use features deprecated in MySQL 8.0 that have been removed in a higher MySQL series, statements may fail when replicated from a MySQL 8.0 master to a higher-series slave, or may have different effects on master and slave. To avoid such problems, applications that use features deprecated in 8.0 should be revised to avoid them and use alternatives when possible.
 
 -  The `utf8mb3` character set is deprecated.  Please use `utf8mb4` instead. 
 
@@ -1531,9 +1512,9 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 
 
 
-​ The following items are obsolete and have been removed in MySQL 8.0. Where alternatives are shown, applications should be updated to use them. 
+ The following items are obsolete and have been removed in MySQL 8.0. Where alternatives are shown, applications should be updated to use them. 
 
-​ For MySQL 5.7 applications that use features removed in MySQL 8.0, statements may fail when replicated from a MySQL 5.7 master to a MySQL 8.0 slave, or may have different effects on master and slave. To avoid such problems, applications that use features removed in MySQL 8.0 should be revised to avoid them and use alternatives when possible.
+ For MySQL 5.7 applications that use features removed in MySQL 8.0, statements may fail when replicated from a MySQL 5.7 master to a MySQL 8.0 slave, or may have different effects on master and slave. To avoid such problems, applications that use features removed in MySQL 8.0 should be revised to avoid them and use alternatives when possible.
 
 -  The `innodb_locks_unsafe_for_binlog` system  variable was removed. The [`READ COMMITTED`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/innodb-storage-engine.html#isolevel_read-committed) isolation level provides similar  functionality. 
 
@@ -2650,7 +2631,7 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 
 ## 1.5 Server and Status Variables and Options Added, Deprecated, or Removed in MySQL 8.0
 
-​ This section lists server variables, status variables, and options that were added for the first time, have been deprecated, or have been removed in MySQL 8.0.
+ This section lists server variables, status variables, and options that were added for the first time, have been deprecated, or have been removed in MySQL 8.0.
 
 - [Options and Variables Introduced in MySQL 8.0](#optvars-added) 
 - [Options and Variables Deprecated in MySQL 8.0](#optvars-deprecated) 
@@ -2658,7 +2639,7 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 
 ### Options and Variables Introduced in MySQL 8.0
 
-​ The following system variables, status variables, and options are new in MySQL 8.0, and have not been included in any previous release series.
+ The following system variables, status variables, and options are new in MySQL 8.0, and have not been included in any previous release series.
 
 
 
@@ -2989,7 +2970,7 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 
 ### Options and Variables Deprecated in MySQL 8.0
 
-​ The following system variables, status variables, and options have been deprecated in MySQL 8.0.
+ The following system variables, status variables, and options have been deprecated in MySQL 8.0.
 
 
 
@@ -3008,7 +2989,7 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 
 ### Options and Variables Removed in MySQL 8.0
 
-​ The following system variables, status variables, and options have been removed in MySQL 8.0.
+ The following system variables, status variables, and options have been removed in MySQL 8.0.
 
 
 
@@ -3081,21 +3062,21 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 - [1.6.2 MySQL Community Support at the MySQL Forums](#forums)
 - [1.6.3 MySQL Enterprise](#mysql-enterprise-information)
 
-​ This section lists sources of additional information that you may find helpful, such as MySQL websites, mailing lists, user forums, and Internet Relay Chat.
+ This section lists sources of additional information that you may find helpful, such as MySQL websites, mailing lists, user forums, and Internet Relay Chat.
 
 ### 1.6.1 MySQL Websites
 
 
 
-​ The primary website for MySQL documentation is https://dev.mysql.com/doc/. Online and downloadable documentation formats are available for the MySQL Reference Manual, MySQL Connectors, and more. 
+ The primary website for MySQL documentation is https://dev.mysql.com/doc/. Online and downloadable documentation formats are available for the MySQL Reference Manual, MySQL Connectors, and more. 
 
-​ The MySQL developers provide information about new and upcoming features as the [MySQL Server Blog](http://mysqlserverteam.com/).
+ The MySQL developers provide information about new and upcoming features as the [MySQL Server Blog](http://mysqlserverteam.com/).
 
 ### 1.6.2 MySQL Community Support at the MySQL Forums
 
 
 
-​ The forums at http://forums.mysql.com are an important community resource. Many forums are available, grouped into these general categories:
+ The forums at http://forums.mysql.com are an important community resource. Many forums are available, grouped into these general categories:
 
 - Migration 
 - MySQL Usage 
@@ -3110,7 +3091,7 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 
 ### 1.6.3 MySQL Enterprise
 
-​ Oracle offers technical support in the form of MySQL Enterprise. For organizations that rely on the MySQL DBMS for business-critical production applications, MySQL Enterprise is a commercial subscription offering which includes:
+ Oracle offers technical support in the form of MySQL Enterprise. For organizations that rely on the MySQL DBMS for business-critical production applications, MySQL Enterprise is a commercial subscription offering which includes:
 
 -  MySQL Enterprise Server 
 -  MySQL Enterprise Monitor 
@@ -3118,13 +3099,13 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 -  MySQL Knowledge Base 
 -  24x7 Technical and Consultative Support
 
-​ MySQL Enterprise is available in multiple tiers, giving you the flexibility to choose the level of service that best matches your needs. For more information, see [MySQL Enterprise](https://www.mysql.com/products/enterprise/).
+ MySQL Enterprise is available in multiple tiers, giving you the flexibility to choose the level of service that best matches your needs. For more information, see [MySQL Enterprise](https://www.mysql.com/products/enterprise/).
 
 ## 1.7 How to Report Bugs or Problems
 
 
 
-​ Before posting a bug report about a problem, please try to verify that it is a bug and that it has not been reported already:
+ Before posting a bug report about a problem, please try to verify that it is a bug and that it has not been reported already:
 
 - Start by searching the MySQL online manual at https://dev.mysql.com/doc/. We try to keep the manual up to date by updating it frequently with solutions to newly found problems. In addition, the release notes accompanying the manual can be particularly useful since it is quite possible that a newer version contains a solution to your problem. The release notes are available at the location just given for the manual. 
 
@@ -3138,35 +3119,35 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 
 - You can also use http://www.mysql.com/search/ to search all the Web pages (including the manual) that are located at the MySQL website.
 
-​ If you cannot find an answer in the manual, the bugs database, or the mailing list archives, check with your local MySQL expert. If you still cannot find an answer to your question, please use the following guidelines for reporting the bug. 
+ If you cannot find an answer in the manual, the bugs database, or the mailing list archives, check with your local MySQL expert. If you still cannot find an answer to your question, please use the following guidelines for reporting the bug. 
 
-​ The normal way to report bugs is to visit http://bugs.mysql.com/, which is the address for our bugs database. This database is public and can be browsed and searched by anyone. If you log in to the system, you can enter new reports. 
+ The normal way to report bugs is to visit http://bugs.mysql.com/, which is the address for our bugs database. This database is public and can be browsed and searched by anyone. If you log in to the system, you can enter new reports. 
 
-​ Bugs posted in the bugs database at http://bugs.mysql.com/ that are corrected for a given release are noted in the release notes. 
+ Bugs posted in the bugs database at http://bugs.mysql.com/ that are corrected for a given release are noted in the release notes. 
 
-​ If you find a security bug in MySQL Server, please let us know immediately by sending an email message to `<secalert_us@oracle.com>`. Exception: Support customers should report all problems, including security bugs, to Oracle Support at http://support.oracle.com/. 
+ If you find a security bug in MySQL Server, please let us know immediately by sending an email message to `<secalert_us@oracle.com>`. Exception: Support customers should report all problems, including security bugs, to Oracle Support at http://support.oracle.com/. 
 
-​ To discuss problems with other users, you can use the [MySQL Community  Slack](https://mysqlcommunity.slack.com/). 
+ To discuss problems with other users, you can use the [MySQL Community  Slack](https://mysqlcommunity.slack.com/). 
 
-​ Writing a good bug report takes patience, but doing it right the first time saves time both for us and for yourself. A good bug report, containing a full test case for the bug, makes it very likely that we will fix the bug in the next release. This section helps you write your report correctly so that you do not waste your time doing things that may not help us much or at all. Please read this section carefully and make sure that all the information described here is included in your report. 
+ Writing a good bug report takes patience, but doing it right the first time saves time both for us and for yourself. A good bug report, containing a full test case for the bug, makes it very likely that we will fix the bug in the next release. This section helps you write your report correctly so that you do not waste your time doing things that may not help us much or at all. Please read this section carefully and make sure that all the information described here is included in your report. 
 
-​ Preferably, you should test the problem using the latest production or development version of MySQL Server before posting. Anyone should be able to repeat the bug by just using `mysql test < script_file` on your test case or by running the shell or Perl script that you include in the bug report. Any bug that we are able to repeat has a high chance of being fixed in the next MySQL release. 
+ Preferably, you should test the problem using the latest production or development version of MySQL Server before posting. Anyone should be able to repeat the bug by just using `mysql test < script_file` on your test case or by running the shell or Perl script that you include in the bug report. Any bug that we are able to repeat has a high chance of being fixed in the next MySQL release. 
 
-​ It is most helpful when a good description of the problem is included in the bug report. That is, give a good example of everything you did that led to the problem and describe, in exact detail, the problem itself. The best reports are those that include a full example showing how to reproduce the bug or problem. See [Section 29.5, “Debugging and Porting MySQL”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/extending-mysql.html#porting). 
+ It is most helpful when a good description of the problem is included in the bug report. That is, give a good example of everything you did that led to the problem and describe, in exact detail, the problem itself. The best reports are those that include a full example showing how to reproduce the bug or problem. See [Section 29.5, “Debugging and Porting MySQL”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/extending-mysql.html#porting). 
 
-​ Remember that it is possible for us to respond to a report containing too much information, but not to one containing too little. People often omit facts because they think they know the cause of a problem and assume that some details do not matter. A good principle to follow is that if you are in doubt about stating something, state it. It is faster and less troublesome to write a couple more lines in your report than to wait longer for the answer if we must ask you to provide information that was missing from the initial report. 
+ Remember that it is possible for us to respond to a report containing too much information, but not to one containing too little. People often omit facts because they think they know the cause of a problem and assume that some details do not matter. A good principle to follow is that if you are in doubt about stating something, state it. It is faster and less troublesome to write a couple more lines in your report than to wait longer for the answer if we must ask you to provide information that was missing from the initial report. 
 
-​ The most common errors made in bug reports are (a) not including the version number of the MySQL distribution that you use, and (b) not fully describing the platform on which the MySQL server is installed (including the platform type and version number). These are highly relevant pieces of information, and in 99 cases out of 100, the bug report is useless without them. Very often we get questions like, “Why doesn't this work for me?” Then we find that the feature requested wasn't implemented in that MySQL version, or that a bug described in a report has been fixed in newer MySQL versions. Errors often are platform-dependent. In such cases, it is next to impossible for us to fix anything without knowing the operating system and the version number of the platform. 
+ The most common errors made in bug reports are (a) not including the version number of the MySQL distribution that you use, and (b) not fully describing the platform on which the MySQL server is installed (including the platform type and version number). These are highly relevant pieces of information, and in 99 cases out of 100, the bug report is useless without them. Very often we get questions like, “Why doesn't this work for me?” Then we find that the feature requested wasn't implemented in that MySQL version, or that a bug described in a report has been fixed in newer MySQL versions. Errors often are platform-dependent. In such cases, it is next to impossible for us to fix anything without knowing the operating system and the version number of the platform. 
 
-​ If you compiled MySQL from source, remember also to provide information about your compiler if it is related to the problem. Often people find bugs in compilers and think the problem is MySQL-related. Most compilers are under development all the time and become better version by version. To determine whether your problem depends on your compiler, we need to know what compiler you used. Note that every compiling problem should be regarded as a bug and reported accordingly. 
+ If you compiled MySQL from source, remember also to provide information about your compiler if it is related to the problem. Often people find bugs in compilers and think the problem is MySQL-related. Most compilers are under development all the time and become better version by version. To determine whether your problem depends on your compiler, we need to know what compiler you used. Note that every compiling problem should be regarded as a bug and reported accordingly. 
 
-​ If a program produces an error message, it is very important to include the message in your report. If we try to search for something from the archives, it is better that the error message reported exactly matches the one that the program produces. (Even the lettercase should be observed.) It is best to copy and paste the entire error message into your report. You should never try to reproduce the message from memory. 
+ If a program produces an error message, it is very important to include the message in your report. If we try to search for something from the archives, it is better that the error message reported exactly matches the one that the program produces. (Even the lettercase should be observed.) It is best to copy and paste the entire error message into your report. You should never try to reproduce the message from memory. 
 
-​ If you have a problem with Connector/ODBC (MyODBC), please try to generate a trace file and send it with your report. See [How to Report Connector/ODBC Problems or Bugs](https://dev.mysql.com/doc/connector-odbc/en/connector-odbc-support-bug-report.html). 
+ If you have a problem with Connector/ODBC (MyODBC), please try to generate a trace file and send it with your report. See [How to Report Connector/ODBC Problems or Bugs](https://dev.mysql.com/doc/connector-odbc/en/connector-odbc-support-bug-report.html). 
 
-​ If your report includes long query output lines from test cases that you run with the [**mysql**](programs#mysql) command-line tool, you can make the output more readable by using the [`--vertical`](programs#option_mysql_vertical) option or the `\G` statement terminator. The [`EXPLAIN SELECT`](sql-statements.html#explain) example later in this section demonstrates the use of `\G`. 
+ If your report includes long query output lines from test cases that you run with the [**mysql**](programs#mysql) command-line tool, you can make the output more readable by using the [`--vertical`](programs#option_mysql_vertical) option or the `\G` statement terminator. The [`EXPLAIN SELECT`](sql-statements.html#explain) example later in this section demonstrates the use of `\G`. 
 
-​ Please include the following information in your report:
+ Please include the following information in your report:
 
 - The version number of the MySQL distribution you are using (for example, MySQL 5.7.10). You can find out which version you are running by executing [**mysqladmin version**](programs#mysqladmin). The [**mysqladmin**](programs#mysqladmin) program can be found in the `bin` directory under your MySQL installation directory. 
 
@@ -3261,52 +3242,52 @@ MySQL网站[http://www.mysql.com/]http://www.mysql.com/)提供有关MySQL软件�
 
 
 
-​ This section describes how MySQL relates to the ANSI/ISO SQL standards. MySQL Server has many extensions to the SQL standard, and here you can find out what they are and how to use them. You can also find information about functionality missing from MySQL Server, and how to work around some of the differences. 
+ This section describes how MySQL relates to the ANSI/ISO SQL standards. MySQL Server has many extensions to the SQL standard, and here you can find out what they are and how to use them. You can also find information about functionality missing from MySQL Server, and how to work around some of the differences. 
 
-​ The SQL standard has been evolving since 1986 and several versions exist. In this manual, “SQL-92” refers to the standard released in 1992. “SQL:1999”, “SQL:2003”, “SQL:2008”, and “SQL:2011” refer to the versions of the standard released in the corresponding years, with the last being the most recent version. We use the phrase “the SQL standard” or “standard SQL” to mean the current version of the SQL Standard at any time. 
+ The SQL standard has been evolving since 1986 and several versions exist. In this manual, “SQL-92” refers to the standard released in 1992. “SQL:1999”, “SQL:2003”, “SQL:2008”, and “SQL:2011” refer to the versions of the standard released in the corresponding years, with the last being the most recent version. We use the phrase “the SQL standard” or “standard SQL” to mean the current version of the SQL Standard at any time. 
 
-​ One of our main goals with the product is to continue to work toward compliance with the SQL standard, but without sacrificing speed or reliability. We are not afraid to add extensions to SQL or support for non-SQL features if this greatly increases the usability of MySQL Server for a large segment of our user base. The [`HANDLER`](sql-statements.html#handler) interface is an example of this strategy. See [Section 13.2.4, “HANDLER Statement”](sql-statements.html#handler). 
+ One of our main goals with the product is to continue to work toward compliance with the SQL standard, but without sacrificing speed or reliability. We are not afraid to add extensions to SQL or support for non-SQL features if this greatly increases the usability of MySQL Server for a large segment of our user base. The [`HANDLER`](sql-statements.html#handler) interface is an example of this strategy. See [Section 13.2.4, “HANDLER Statement”](sql-statements.html#handler). 
 
-​ We continue to support transactional and nontransactional databases to satisfy both mission-critical 24/7 usage and heavy Web or logging usage. 
+ We continue to support transactional and nontransactional databases to satisfy both mission-critical 24/7 usage and heavy Web or logging usage. 
 
-​ MySQL Server was originally designed to work with medium-sized databases (10-100 million rows, or about 100MB per table) on small computer systems. Today MySQL Server handles terabyte-sized databases. 
+ MySQL Server was originally designed to work with medium-sized databases (10-100 million rows, or about 100MB per table) on small computer systems. Today MySQL Server handles terabyte-sized databases. 
 
-​ We are not targeting real-time support, although MySQL replication capabilities offer significant functionality. 
+ We are not targeting real-time support, although MySQL replication capabilities offer significant functionality. 
 
-​ MySQL supports ODBC levels 0 to 3.51. 
+ MySQL supports ODBC levels 0 to 3.51. 
 
-​ MySQL supports high-availability database clustering using the [`NDBCLUSTER`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/mysql-cluster.html) storage engine. See [Chapter 22, *MySQL NDB Cluster 8.0*](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/mysql-cluster.html). 
+ MySQL supports high-availability database clustering using the [`NDBCLUSTER`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/mysql-cluster.html) storage engine. See [Chapter 22, *MySQL NDB Cluster 8.0*](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/mysql-cluster.html). 
 
-​ We implement XML functionality which supports most of the W3C XPath standard. See [Section 12.11, “XML Functions”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#xml-functions). 
+ We implement XML functionality which supports most of the W3C XPath standard. See [Section 12.11, “XML Functions”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#xml-functions). 
 
-​ MySQL supports a native JSON data type as defined by RFC 7159, and based on the ECMAScript standard (ECMA-262). See [Section 11.5, “The JSON Data Type”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#json). MySQL also implements a subset of the SQL/JSON functions specified by a pre-publication draft of the SQL:2016 standard; see [Section 12.17, “JSON Functions”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#json-functions), for more information.
+ MySQL supports a native JSON data type as defined by RFC 7159, and based on the ECMAScript standard (ECMA-262). See [Section 11.5, “The JSON Data Type”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#json). MySQL also implements a subset of the SQL/JSON functions specified by a pre-publication draft of the SQL:2016 standard; see [Section 12.17, “JSON Functions”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#json-functions), for more information.
 
 ### Selecting SQL Modes
 
-​ The MySQL server can operate in different SQL modes, and can apply these modes differently for different clients, depending on the value of the [`sql_mode`](server-administration#sysvar_sql_mode) system variable. DBAs can set the global SQL mode to match site server operating requirements, and each application can set its session SQL mode to its own requirements. 
+ The MySQL server can operate in different SQL modes, and can apply these modes differently for different clients, depending on the value of the [`sql_mode`](server-administration#sysvar_sql_mode) system variable. DBAs can set the global SQL mode to match site server operating requirements, and each application can set its session SQL mode to its own requirements. 
 
-​ Modes affect the SQL syntax MySQL supports and the data validation checks it performs. This makes it easier to use MySQL in different environments and to use MySQL together with other database servers. 
+ Modes affect the SQL syntax MySQL supports and the data validation checks it performs. This makes it easier to use MySQL in different environments and to use MySQL together with other database servers. 
 
-​ For more information on setting the SQL mode, see [Section 5.1.11, “Server SQL Modes”](server-administration#sql-mode).
+ For more information on setting the SQL mode, see [Section 5.1.11, “Server SQL Modes”](server-administration#sql-mode).
 
 ### Running MySQL in ANSI Mode
 
 
 
-​ To run MySQL Server in ANSI mode, start [**mysqld**](programs#mysqld) with the [`--ansi`](server-administration#option_mysqld_ansi) option. Running the server in ANSI mode is the same as starting it with the following options: 
+ To run MySQL Server in ANSI mode, start [**mysqld**](programs#mysqld) with the [`--ansi`](server-administration#option_mysqld_ansi) option. Running the server in ANSI mode is the same as starting it with the following options: 
 
 ```
 --transaction-isolation=SERIALIZABLE --sql-mode=ANSI
 ```
 
-​ To achieve the same effect at runtime, execute these two statements: 
+ To achieve the same effect at runtime, execute these two statements: 
 
 ```
 SET GLOBAL TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 SET GLOBAL sql_mode = 'ANSI';
 ```
 
-​ You can see that setting the [`sql_mode`](server-administration#sysvar_sql_mode) system variable to `'ANSI'` enables all SQL mode options that are relevant for ANSI mode as follows: 
+ You can see that setting the [`sql_mode`](server-administration#sysvar_sql_mode) system variable to `'ANSI'` enables all SQL mode options that are relevant for ANSI mode as follows: 
 
 ```
 mysql> SET GLOBAL sql_mode='ANSI';
@@ -3314,33 +3295,33 @@ mysql> SELECT @@GLOBAL.sql_mode;
  -> 'REAL_AS_FLOAT,PIPES_AS_CONCAT,ANSI_QUOTES,IGNORE_SPACE,ANSI'
 ```
 
-​ Running the server in ANSI mode with [`--ansi`](server-administration#option_mysqld_ansi) is not quite the same as setting the SQL mode to `'ANSI'` because the [`--ansi`](server-administration#option_mysqld_ansi) option also sets the transaction isolation level. 
+ Running the server in ANSI mode with [`--ansi`](server-administration#option_mysqld_ansi) is not quite the same as setting the SQL mode to `'ANSI'` because the [`--ansi`](server-administration#option_mysqld_ansi) option also sets the transaction isolation level. 
 
-​ See [Section 5.1.7, “Server Command Options”](server-administration#server-options).
+ See [Section 5.1.7, “Server Command Options”](server-administration#server-options).
 
 ### 1.8.1 MySQL Extensions to Standard SQL
 
 
 
-​ MySQL Server supports some extensions that you probably will not find in other SQL DBMSs. Be warned that if you use them, your code will not be portable to other SQL servers. In some cases, you can write code that includes MySQL extensions, but is still portable, by using comments of the following form: 
+ MySQL Server supports some extensions that you probably will not find in other SQL DBMSs. Be warned that if you use them, your code will not be portable to other SQL servers. In some cases, you can write code that includes MySQL extensions, but is still portable, by using comments of the following form: 
 
 ```
 /*! MySQL-specific code */
 ```
 
-​ In this case, MySQL Server parses and executes the code within the comment as it would any other SQL statement, but other SQL servers will ignore the extensions. For example, MySQL Server recognizes the `STRAIGHT_JOIN` keyword in the following statement, but other servers will not: 
+ In this case, MySQL Server parses and executes the code within the comment as it would any other SQL statement, but other SQL servers will ignore the extensions. For example, MySQL Server recognizes the `STRAIGHT_JOIN` keyword in the following statement, but other servers will not: 
 
 ```
 SELECT /*! STRAIGHT_JOIN */ col1 FROM table1,table2 WHERE ...
 ```
 
-​ If you add a version number after the `!` character, the syntax within the comment is executed only if the MySQL version is greater than or equal to the specified version number. The `KEY_BLOCK_SIZE` clause in the following comment is executed only by servers from MySQL 5.1.10 or higher: 
+ If you add a version number after the `!` character, the syntax within the comment is executed only if the MySQL version is greater than or equal to the specified version number. The `KEY_BLOCK_SIZE` clause in the following comment is executed only by servers from MySQL 5.1.10 or higher: 
 
 ```
 CREATE TABLE t1(a INT, KEY (a)) /*!50110 KEY_BLOCK_SIZE=1024 */;
 ```
 
-​ The following descriptions list MySQL extensions, organized by category.
+ The following descriptions list MySQL extensions, organized by category.
 
 -  Organization of data on disk 
 
@@ -3433,7 +3414,7 @@ CREATE TABLE t1(a INT, KEY (a)) /*!50110 KEY_BLOCK_SIZE=1024 */;
 
 
 
-​ We try to make MySQL Server follow the ANSI SQL standard and the ODBC SQL standard, but MySQL Server performs operations differently in some cases:
+ We try to make MySQL Server follow the ANSI SQL standard and the ODBC SQL standard, but MySQL Server performs operations differently in some cases:
 
 -  There are several differences between the MySQL and standard  SQL privilege systems. For example, in MySQL, privileges for  a table are not automatically revoked when you delete a  table. You must explicitly issue a  [`REVOKE`](sql-statements.html#revoke) statement to revoke  privileges for a table. For more information, see  [Section 13.7.1.8, “REVOKE Statement”](sql-statements.html#revoke). 
 -  The [`CAST()`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#function_cast) function does not  support cast to [`REAL`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#floating-point-types) or  [`BIGINT`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#integer-types). See  [Section 12.10, “Cast Functions and Operators”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/functions.html#cast-functions).
@@ -3442,7 +3423,7 @@ CREATE TABLE t1(a INT, KEY (a)) /*!50110 KEY_BLOCK_SIZE=1024 */;
 
 
 
-​ MySQL Server doesn't support the `SELECT ... INTO TABLE` Sybase SQL extension. Instead, MySQL Server supports the [`INSERT INTO ... SELECT`](sql-statements.html#insert-select) standard SQL syntax, which is basically the same thing. See [Section 13.2.6.1, “INSERT ... SELECT Statement”](sql-statements.html#insert-select). For example: 
+ MySQL Server doesn't support the `SELECT ... INTO TABLE` Sybase SQL extension. Instead, MySQL Server supports the [`INSERT INTO ... SELECT`](sql-statements.html#insert-select) standard SQL syntax, which is basically the same thing. See [Section 13.2.6.1, “INSERT ... SELECT Statement”](sql-statements.html#insert-select). For example: 
 
 ```
 INSERT INTO tbl_temp2 (fld_id)
@@ -3450,15 +3431,15 @@ INSERT INTO tbl_temp2 (fld_id)
  FROM tbl_temp1 WHERE tbl_temp1.fld_order_id > 100;
 ```
 
-​ Alternatively, you can use [`SELECT ... INTO OUTFILE`](sql-statements.html#select-into) or [`CREATE TABLE ... SELECT`](sql-statements.html#create-table). 
+ Alternatively, you can use [`SELECT ... INTO OUTFILE`](sql-statements.html#select-into) or [`CREATE TABLE ... SELECT`](sql-statements.html#create-table). 
 
-​ You can use [`SELECT ... INTO`](sql-statements.html#select) with user-defined variables. The same syntax can also be used inside stored routines using cursors and local variables. See [Section 13.2.10.1, “SELECT ... INTO Statement”](sql-statements.html#select-into).
+ You can use [`SELECT ... INTO`](sql-statements.html#select) with user-defined variables. The same syntax can also be used inside stored routines using cursors and local variables. See [Section 13.2.10.1, “SELECT ... INTO Statement”](sql-statements.html#select-into).
 
 #### 1.8.2.2 UPDATE Differences
 
 
 
-​ If you access a column from the table to be updated in an expression, [`UPDATE`](sql-statements.html#update) uses the current value of the column. The second assignment in the following statement sets `col2` to the current (updated) `col1` value, not the original `col1` value. The result is that `col1` and `col2` have the same value. This behavior differs from standard SQL. 
+ If you access a column from the table to be updated in an expression, [`UPDATE`](sql-statements.html#update) uses the current value of the column. The second assignment in the following statement sets `col2` to the current (updated) `col1` value, not the original `col1` value. The result is that `col1` and `col2` have the same value. This behavior differs from standard SQL. 
 
 ```
 UPDATE t1 SET col1 = col1 + 1, col2 = col1;
@@ -3468,7 +3449,7 @@ UPDATE t1 SET col1 = col1 + 1, col2 = col1;
 
 
 
-​ The MySQL implementation of foreign key constraints differs from the SQL standard in the following key respects:
+ The MySQL implementation of foreign key constraints differs from the SQL standard in the following key respects:
 
 - If there are several rows in the parent table with the same referenced key value, [`InnoDB`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/innodb-storage-engine.html) performs a foreign key check as if the other parent rows with the same key value do not exist. For example, if you define a `RESTRICT` type constraint, and there is a child row with several parent rows, `InnoDB` does not permit the deletion of any of the parent rows.  
 
@@ -3488,37 +3469,37 @@ UPDATE t1 SET col1 = col1 + 1, col2 = col1;
 
 - MySQL parses but ignores “inline `REFERENCES` specifications” (as defined in the SQL standard) where the references are defined as part of the column specification. MySQL accepts `REFERENCES` clauses only when specified as part of a separate `FOREIGN KEY` specification. For storage engines that do not support foreign keys (such as [`MyISAM`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/storage-engines.html#myisam-storage-engine)), MySQL Server parses and ignores foreign key specifications.
 
-​ For information about foreign key constraints, see [Section 13.1.20.5, “FOREIGN KEY Constraints”](sql-statements.html#create-table-foreign-keys).
+ For information about foreign key constraints, see [Section 13.1.20.5, “FOREIGN KEY Constraints”](sql-statements.html#create-table-foreign-keys).
 
 #### 1.8.2.4 '--' as the Start of a Comment
 
 
 
-​ Standard SQL uses the C syntax `/* this is a comment */` for comments, and MySQL Server supports this syntax as well. MySQL also support extensions to this syntax that enable MySQL-specific SQL to be embedded in the comment, as described in [Section 9.6, “Comment Syntax”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/language-structure.html#comments). 
+ Standard SQL uses the C syntax `/* this is a comment */` for comments, and MySQL Server supports this syntax as well. MySQL also support extensions to this syntax that enable MySQL-specific SQL to be embedded in the comment, as described in [Section 9.6, “Comment Syntax”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/language-structure.html#comments). 
 
-​ Standard SQL uses “`--`” as a start-comment sequence. MySQL Server uses `#` as the start comment character. MySQL Server also supports a variant of the `--` comment style. That is, the `--` start-comment sequence must be followed by a space (or by a control character such as a newline). The space is required to prevent problems with automatically generated SQL queries that use constructs such as the following, where we automatically insert the value of the payment for `payment`: 
+ Standard SQL uses “`--`” as a start-comment sequence. MySQL Server uses `#` as the start comment character. MySQL Server also supports a variant of the `--` comment style. That is, the `--` start-comment sequence must be followed by a space (or by a control character such as a newline). The space is required to prevent problems with automatically generated SQL queries that use constructs such as the following, where we automatically insert the value of the payment for `payment`: 
 
 ```
 UPDATE account SET credit=credit-payment
 ```
 
-​ Consider about what happens if `payment` has a negative value such as `-1`: 
+ Consider about what happens if `payment` has a negative value such as `-1`: 
 
 ```
 UPDATE account SET credit=credit--1
 ```
 
-​ `credit--1` is a valid expression in SQL, but `--` is interpreted as the start of a comment, part of the expression is discarded. The result is a statement that has a completely different meaning than intended: 
+ `credit--1` is a valid expression in SQL, but `--` is interpreted as the start of a comment, part of the expression is discarded. The result is a statement that has a completely different meaning than intended: 
 
 ```
 UPDATE account SET credit=credit
 ```
 
-​ The statement produces no change in value at all. This illustrates that permitting comments to start with `--` can have serious consequences. 
+ The statement produces no change in value at all. This illustrates that permitting comments to start with `--` can have serious consequences. 
 
-​ Using our implementation requires a space following the `--` for it to be recognized as a start-comment sequence in MySQL Server. Therefore, `credit--1` is safe to use. 
+ Using our implementation requires a space following the `--` for it to be recognized as a start-comment sequence in MySQL Server. Therefore, `credit--1` is safe to use. 
 
-​ Another safe feature is that the [**mysql**](programs#mysql) command-line client ignores lines that start with `--`.
+ Another safe feature is that the [**mysql**](programs#mysql) command-line client ignores lines that start with `--`.
 
 ### 1.8.3 How MySQL Deals with Constraints
 
@@ -3529,43 +3510,43 @@ UPDATE account SET credit=credit
 
 
 
-​ MySQL enables you to work both with transactional tables that permit rollback and with nontransactional tables that do not. Because of this, constraint handling is a bit different in MySQL than in other DBMSs. We must handle the case when you have inserted or updated a lot of rows in a nontransactional table for which changes cannot be rolled back when an error occurs. 
+ MySQL enables you to work both with transactional tables that permit rollback and with nontransactional tables that do not. Because of this, constraint handling is a bit different in MySQL than in other DBMSs. We must handle the case when you have inserted or updated a lot of rows in a nontransactional table for which changes cannot be rolled back when an error occurs. 
 
-​ The basic philosophy is that MySQL Server tries to produce an error for anything that it can detect while parsing a statement to be executed, and tries to recover from any errors that occur while executing the statement. We do this in most cases, but not yet for all. 
+ The basic philosophy is that MySQL Server tries to produce an error for anything that it can detect while parsing a statement to be executed, and tries to recover from any errors that occur while executing the statement. We do this in most cases, but not yet for all. 
 
-​ The options MySQL has when an error occurs are to stop the statement in the middle or to recover as well as possible from the problem and continue. By default, the server follows the latter course. This means, for example, that the server may coerce invalid values to the closest valid values. 
+ The options MySQL has when an error occurs are to stop the statement in the middle or to recover as well as possible from the problem and continue. By default, the server follows the latter course. This means, for example, that the server may coerce invalid values to the closest valid values. 
 
-​ Several SQL mode options are available to provide greater control over handling of bad data values and whether to continue statement execution or abort when errors occur. Using these options, you can configure MySQL Server to act in a more traditional fashion that is like other DBMSs that reject improper input. The SQL mode can be set globally at server startup to affect all clients. Individual clients can set the SQL mode at runtime, which enables each client to select the behavior most appropriate for its requirements. See [Section 5.1.11, “Server SQL Modes”](server-administration#sql-mode). 
+ Several SQL mode options are available to provide greater control over handling of bad data values and whether to continue statement execution or abort when errors occur. Using these options, you can configure MySQL Server to act in a more traditional fashion that is like other DBMSs that reject improper input. The SQL mode can be set globally at server startup to affect all clients. Individual clients can set the SQL mode at runtime, which enables each client to select the behavior most appropriate for its requirements. See [Section 5.1.11, “Server SQL Modes”](server-administration#sql-mode). 
 
-​ The following sections describe how MySQL Server handles different types of constraints.
+ The following sections describe how MySQL Server handles different types of constraints.
 
 #### 1.8.3.1 PRIMARY KEY and UNIQUE Index Constraints
 
 
 
-​ Normally, errors occur for data-change statements (such as [`INSERT`](sql-statements.html#insert) or [`UPDATE`](sql-statements.html#update)) that would violate primary-key, unique-key, or foreign-key constraints. If you are using a transactional storage engine such as `InnoDB`, MySQL automatically rolls back the statement. If you are using a nontransactional storage engine, MySQL stops processing the statement at the row for which the error occurred and leaves any remaining rows unprocessed. 
+ Normally, errors occur for data-change statements (such as [`INSERT`](sql-statements.html#insert) or [`UPDATE`](sql-statements.html#update)) that would violate primary-key, unique-key, or foreign-key constraints. If you are using a transactional storage engine such as `InnoDB`, MySQL automatically rolls back the statement. If you are using a nontransactional storage engine, MySQL stops processing the statement at the row for which the error occurred and leaves any remaining rows unprocessed. 
 
-​ MySQL supports an `IGNORE` keyword for [`INSERT`](sql-statements.html#insert), [`UPDATE`](sql-statements.html#update), and so forth. If you use it, MySQL ignores primary-key or unique-key violations and continues processing with the next row. See the section for the statement that you are using ([Section 13.2.6, “INSERT Statement”](sql-statements.html#insert), [Section 13.2.13, “UPDATE Statement”](sql-statements.html#update), and so forth). 
+ MySQL supports an `IGNORE` keyword for [`INSERT`](sql-statements.html#insert), [`UPDATE`](sql-statements.html#update), and so forth. If you use it, MySQL ignores primary-key or unique-key violations and continues processing with the next row. See the section for the statement that you are using ([Section 13.2.6, “INSERT Statement”](sql-statements.html#insert), [Section 13.2.13, “UPDATE Statement”](sql-statements.html#update), and so forth). 
 
-​ You can get information about the number of rows actually inserted or updated with the [`mysql_info()`](https://dev.mysql.com/doc/c-api/8.0/en/mysql-info.html) C API function. You can also use the [`SHOW WARNINGS`](sql-statements.html#show-warnings) statement. See [mysql_info()](https://dev.mysql.com/doc/c-api/8.0/en/mysql-info.html), and [Section 13.7.7.40, “SHOW WARNINGS Statement”](sql-statements.html#show-warnings). 
+ You can get information about the number of rows actually inserted or updated with the [`mysql_info()`](https://dev.mysql.com/doc/c-api/8.0/en/mysql-info.html) C API function. You can also use the [`SHOW WARNINGS`](sql-statements.html#show-warnings) statement. See [mysql_info()](https://dev.mysql.com/doc/c-api/8.0/en/mysql-info.html), and [Section 13.7.7.40, “SHOW WARNINGS Statement”](sql-statements.html#show-warnings). 
 
-​ `InnoDB` and `NDB` tables support foreign keys. See [Section 1.8.3.2, “FOREIGN KEY Constraints”](#constraint-foreign-key).
+ `InnoDB` and `NDB` tables support foreign keys. See [Section 1.8.3.2, “FOREIGN KEY Constraints”](#constraint-foreign-key).
 
 #### 1.8.3.2 FOREIGN KEY Constraints
 
 
 
-​ Foreign keys let you cross-reference related data across tables, and [foreign key constraints](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/glossary.html#glos_foreign_key_constraint) help keep this spread-out data consistent. 
+ Foreign keys let you cross-reference related data across tables, and [foreign key constraints](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/glossary.html#glos_foreign_key_constraint) help keep this spread-out data consistent. 
 
-​ MySQL supports `ON UPDATE` and `ON DELETE` foreign key references in [`CREATE TABLE`](sql-statements.html#create-table) and [`ALTER TABLE`](sql-statements.html#alter-table) statements. The available referential actions are `RESTRICT`, `CASCADE`, `SET NULL`, and `NO ACTION` (the default). 
+ MySQL supports `ON UPDATE` and `ON DELETE` foreign key references in [`CREATE TABLE`](sql-statements.html#create-table) and [`ALTER TABLE`](sql-statements.html#alter-table) statements. The available referential actions are `RESTRICT`, `CASCADE`, `SET NULL`, and `NO ACTION` (the default). 
 
-​ `SET DEFAULT` is also supported by the MySQL Server but is currently rejected as invalid by [`InnoDB`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/innodb-storage-engine.html). Since MySQL does not support deferred constraint checking, `NO ACTION` is treated as `RESTRICT`. For the exact syntax supported by MySQL for foreign keys, see [Section 13.1.20.5, “FOREIGN KEY Constraints”](sql-statements.html#create-table-foreign-keys). 
+ `SET DEFAULT` is also supported by the MySQL Server but is currently rejected as invalid by [`InnoDB`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/innodb-storage-engine.html). Since MySQL does not support deferred constraint checking, `NO ACTION` is treated as `RESTRICT`. For the exact syntax supported by MySQL for foreign keys, see [Section 13.1.20.5, “FOREIGN KEY Constraints”](sql-statements.html#create-table-foreign-keys). 
 
-​ `MATCH FULL`, `MATCH PARTIAL`, and `MATCH SIMPLE` are allowed, but their use should be avoided, as they cause the MySQL Server to ignore any `ON DELETE` or `ON UPDATE` clause used in the same statement. `MATCH` options do not have any other effect in MySQL, which in effect enforces `MATCH SIMPLE` semantics full-time. 
+ `MATCH FULL`, `MATCH PARTIAL`, and `MATCH SIMPLE` are allowed, but their use should be avoided, as they cause the MySQL Server to ignore any `ON DELETE` or `ON UPDATE` clause used in the same statement. `MATCH` options do not have any other effect in MySQL, which in effect enforces `MATCH SIMPLE` semantics full-time. 
 
-​ MySQL requires that foreign key columns be indexed; if you create a table with a foreign key constraint but no index on a given column, an index is created. 
+ MySQL requires that foreign key columns be indexed; if you create a table with a foreign key constraint but no index on a given column, an index is created. 
 
-​ You can obtain information about foreign keys from the [`INFORMATION_SCHEMA.KEY_COLUMN_USAGE`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/information-schema.html#information-schema-key-column-usage-table) table. An example of a query against this table is shown here: 
+ You can obtain information about foreign keys from the [`INFORMATION_SCHEMA.KEY_COLUMN_USAGE`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/information-schema.html#information-schema-key-column-usage-table) table. An example of a query against this table is shown here: 
 
 ```
 mysql> SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME
@@ -3581,28 +3562,28 @@ mysql> SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME
 3 rows in set (0.01 sec)
 ```
 
-​ Information about foreign keys on `InnoDB` tables can also be found in the [`INNODB_FOREIGN`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/information-schema.html#information-schema-innodb-foreign-table) and [`INNODB_FOREIGN_COLS`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/information-schema.html#information-schema-innodb-foreign-cols-table) tables, in the `INFORMATION_SCHEMA` database. 
+ Information about foreign keys on `InnoDB` tables can also be found in the [`INNODB_FOREIGN`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/information-schema.html#information-schema-innodb-foreign-table) and [`INNODB_FOREIGN_COLS`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/information-schema.html#information-schema-innodb-foreign-cols-table) tables, in the `INFORMATION_SCHEMA` database. 
 
-​ `InnoDB` and `NDB` tables support foreign keys.
+ `InnoDB` and `NDB` tables support foreign keys.
 
 #### 1.8.3.3 Enforced Constraints on Invalid Data
 
 
 
-​ By default, MySQL 8.0 rejects invalid or improper data values and aborts the statement in which they occur. It is possible to alter this behavior to be more forgiving of invalid values, such that the server coerces them to valid ones for data entry, by disabling strict SQL mode (see [Section 5.1.11, “Server SQL Modes”](server-administration#sql-mode)), but this is not recommended. 
+ By default, MySQL 8.0 rejects invalid or improper data values and aborts the statement in which they occur. It is possible to alter this behavior to be more forgiving of invalid values, such that the server coerces them to valid ones for data entry, by disabling strict SQL mode (see [Section 5.1.11, “Server SQL Modes”](server-administration#sql-mode)), but this is not recommended. 
 
-​ Older versions of MySQL employed the forgiving behavior by default; for a description of this behavior, see [Constraints on Invalid Data](https://dev.mysql.com/doc/refman/5.7/en/constraint-invalid-data.html).
+ Older versions of MySQL employed the forgiving behavior by default; for a description of this behavior, see [Constraints on Invalid Data](https://dev.mysql.com/doc/refman/5.7/en/constraint-invalid-data.html).
 
 #### 1.8.3.4 ENUM and SET Constraints
 
-​ [`ENUM`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum) and [`SET`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set) columns provide an efficient way to define columns that can contain only a given set of values. See [Section 11.3.5, “The ENUM Type”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum), and [Section 11.3.6, “The SET Type”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set). 
+ [`ENUM`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum) and [`SET`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set) columns provide an efficient way to define columns that can contain only a given set of values. See [Section 11.3.5, “The ENUM Type”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum), and [Section 11.3.6, “The SET Type”](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set). 
 
-​ Unless strict mode is disabled (not recommended, but see [Section 5.1.11, “Server SQL Modes”](server-administration#sql-mode)), the definition of a [`ENUM`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum) or [`SET`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set) column acts as a constraint on values entered into the column. An error occurs for values that do not satisfy these conditions:
+ Unless strict mode is disabled (not recommended, but see [Section 5.1.11, “Server SQL Modes”](server-administration#sql-mode)), the definition of a [`ENUM`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum) or [`SET`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set) column acts as a constraint on values entered into the column. An error occurs for values that do not satisfy these conditions:
 
 - An [`ENUM`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum) value must be one of those listed in the column definition, or the internal numeric equivalent thereof. The value cannot be the error value (that is, 0 or the empty string). For a column defined as [`ENUM('a','b','c')`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum), values such as `''`, `'d'`, or `'ax'` are invalid and are rejected.  
 - A [`SET`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set) value must be the empty string or a value consisting only of the values listed in the column definition separated by commas. For a column defined as [`SET('a','b','c')`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set), values such as `'d'` or `'a,b,c,d'` are invalid and are rejected.
 
-​ Errors for invalid values can be suppressed in strict mode if you use [`INSERT IGNORE`](sql-statements.html#insert) or `UPDATE IGNORE`. In this case, a warning is generated rather than an error. For [`ENUM`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum), the value is inserted as the error member (`0`). For [`SET`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set), the value is inserted as given except that any invalid substrings are deleted. For example, `'a,x,b,y'` results in a value of `'a,b'`.
+ Errors for invalid values can be suppressed in strict mode if you use [`INSERT IGNORE`](sql-statements.html#insert) or `UPDATE IGNORE`. In this case, a warning is generated rather than an error. For [`ENUM`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#enum), the value is inserted as the error member (`0`). For [`SET`](file:///C:/Users/ADMINI~1/AppData/Local/Temp/Rar$EXa8608.40669/refman-8.0-en.html-chapter/data-types.html#set), the value is inserted as given except that any invalid substrings are deleted. For example, `'a,x,b,y'` results in a value of `'a,b'`.
 
 ## 1.9 Credits
 
@@ -3612,13 +3593,13 @@ mysql> SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME
 - [1.9.4 Tools that were used to create MySQL](#tools-used-to-create-mysql)
 - [1.9.5 Supporters of MySQL](#supporters)
 
-​ The following sections list developers, contributors, and supporters that have helped to make MySQL what it is today.
+ The following sections list developers, contributors, and supporters that have helped to make MySQL what it is today.
 
 ### 1.9.1 Contributors to MySQL
 
 
 
-​ Although Oracle Corporation and/or its affiliates own all copyrights in the `MySQL server` and the `MySQL manual`, we wish to recognize those who have made contributions of one kind or another to the `MySQL distribution`. Contributors are listed here, in somewhat random order:
+ Although Oracle Corporation and/or its affiliates own all copyrights in the `MySQL server` and the `MySQL manual`, we wish to recognize those who have made contributions of one kind or another to the `MySQL distribution`. Contributors are listed here, in somewhat random order:
 
 - Gianmassimo Vigazzola `<qwerg@mbox.vol.it>` or `<qwerg@tin.it>` 
 
@@ -3796,11 +3777,11 @@ mysql> SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME
 
  ​ We wish to recognize Google Inc. for contributions to the MySQL distribution: Mark Callaghan's SMP Performance patches and other patches.
 
-​ Other contributors, bugfinders, and testers: James H. Thompson, Maurizio Menghini, Wojciech Tryc, Luca Berra, Zarko Mocnik, Wim Bonis, Elmar Haneke, `<jehamby@lightside>`, `<psmith@BayNetworks.com>`, `<duane@connect.com.au>`, Ted Deppner `<ted@psyber.com>`, Mike Simons, Jaakko Hyvatti. 
+ Other contributors, bugfinders, and testers: James H. Thompson, Maurizio Menghini, Wojciech Tryc, Luca Berra, Zarko Mocnik, Wim Bonis, Elmar Haneke, `<jehamby@lightside>`, `<psmith@BayNetworks.com>`, `<duane@connect.com.au>`, Ted Deppner `<ted@psyber.com>`, Mike Simons, Jaakko Hyvatti. 
 
-​ And lots of bug report/patches from the folks on the mailing list. 
+ And lots of bug report/patches from the folks on the mailing list. 
 
-​ A big tribute goes to those that help us answer questions on the MySQL mailing lists:
+ A big tribute goes to those that help us answer questions on the MySQL mailing lists:
 
 - Daniel Koch `<dkoch@amcity.com>` 
 
@@ -3862,7 +3843,7 @@ mysql> SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME
 
 
 
-​ The following people have helped us with writing the MySQL documentation and translating the documentation or error messages in MySQL.
+ The following people have helped us with writing the MySQL documentation and translating the documentation or error messages in MySQL.
 
 - Paul DuBois 
 
@@ -3948,9 +3929,9 @@ mysql> SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME
 
 
 
-​ The following is a list of creators/maintainers of some of the most important API/packages/applications that a lot of people use with MySQL. 
+ The following is a list of creators/maintainers of some of the most important API/packages/applications that a lot of people use with MySQL. 
 
-​ We cannot list every possible package here because the list would then be way to hard to maintain. For other packages, please refer to the software portal at http://solutions.mysql.com/software/.
+ We cannot list every possible package here because the list would then be way to hard to maintain. For other packages, please refer to the software portal at http://solutions.mysql.com/software/.
 
 - Tim Bunce, Alligator Descartes 
 
@@ -3984,7 +3965,7 @@ mysql> SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME
 
 
 
-​ The following is a list of some of the tools we have used to create MySQL. We use this to express our thanks to those that has created them as without these we could not have made MySQL what it is today.
+ The following is a list of some of the tools we have used to create MySQL. We use this to express our thanks to those that has created them as without these we could not have made MySQL what it is today.
 
 - Free Software Foundation 
 
@@ -4006,7 +3987,7 @@ mysql> SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME
 
 
 
-​ Although Oracle Corporation and/or its affiliates own all copyrights in the `MySQL server` and the `MySQL manual`, we wish to recognize the following companies, which helped us finance the development of the `MySQL server`, such as by paying us for developing a new feature or giving us hardware for development of the `MySQL server`.
+ Although Oracle Corporation and/or its affiliates own all copyrights in the `MySQL server` and the `MySQL manual`, we wish to recognize the following companies, which helped us finance the development of the `MySQL server`, such as by paying us for developing a new feature or giving us hardware for development of the `MySQL server`.
 
 - VA Linux / Andover.net 
 
