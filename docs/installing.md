@@ -893,65 +893,61 @@ shell> tar xvf /path/to/mysql-VERSION-OS.tar.xz
 
 要从压缩的**tar**文件二进制发行版中安装MySQL，你的系统必须有GNU `XZ Utils`来解压缩发行版和合理的**tar**来解压。
 
-Note
-
- The compression algorithm changed from Gzip to XZ in MySQL Server 8.0.12; and the generic binary's file extension changed from .tar.gz to .tar.xz.
-
-  GNU **tar** is known to work. The standard  **tar** provided with some operating systems is not  able to unpack the long file names in the MySQL distribution. You  should download and install GNU **tar**, or if  available, use a preinstalled version of GNU tar. Usually this is  available as **gnutar**, **gtar**, or  as **tar** within a GNU or Free Software directory,  such as `/usr/sfw/bin` or  `/usr/local/bin`. GNU **tar** is  available from http://www.gnu.org/software/tar/.  
-
-  If your **tar** does not support the  `xz` format then use the **xz**  command to unpack the distribution and **tar** to  unpack it. Replace the preceding **tar** command with  the following alternative command to uncompress and extract the  distribution:  
+**备注**
+ 
+> 从MySQL Server 8.0.12开始，压缩算法从gzip变为xz；MySQL分发文件的扩展名从.tar.gz变为.tar.xz。
+> 
+> GNU**tar**是可以解压xz压缩文件。一些操作系统提供的标准**tar**不能解开MySQL分发中的xz压缩文件。你应该下载并安装GNU**tar**，或者如果可以的话，使用预装的GNU tar版本。GNU tar通常在GNU自由软件目录下如`/usr/sfw/bin`或`/usr/local/bin`，文件名为**gnutar**、**gtar**，或这来自http://www.gnu.org/software/tar/的**tar**。
+>
+> 如果你的**tar**不支持`xz`格式，那么请使用**xz**命令来解压发行版，并使用**tar**来解压它。用下面的替代命令代替前面的**tar**命令来解压和提取发行版。
 
 ```
 shell> xz -dc /path/to/mysql-VERSION-OS.tar.xz | tar x
 ```
 
-  Next, create a symbolic link to the installation directory created  by **tar**:
+然后给解压后的目录创建一个名为`mysql`的软链接
 
 ```
 shell> ln -s full-path-to-mysql-VERSION-OS mysql
 ```
-
-  
-
-  The `ln` command makes a symbolic link to the  installation directory. This enables you to refer more easily to it  as `/usr/local/mysql`. To avoid having to type  the path name of client programs always when you are working with  MySQL, you can add the `/usr/local/mysql/bin`  directory to your `PATH` variable:
+ `ln`命令为安装目录建立一个符号链接。这使你能更容易地找到MySQL的安装目录比如`/usr/local/mysql`。为了避免在使用MySQL时总是要输入客户程序的路径名称，你可以将`/usr/local/mysql/bin`目录添加到你的`PATH`变量中。
 
 ```
 shell> export PATH=$PATH:/usr/local/mysql/bin
 ```
 
+### 执行安装后设置
 
+安装过程的其余部分包括设置分配所有权和访问权限，初始化数据目录，启动MySQL服务器，以及设置配置文件。有关说明，见[节2.10，"安装后设置和测试"](#postinstallation)。
 
-### Perform Postinstallation Setup
-
-  The remainder of the installation process involves setting  distribution ownership and access permissions, initializing the data  directory, starting the MySQL server, and setting up the  configuration file. For instructions, see  [节2.10, “Postinstallation Setup and Testing”](#postinstallation).
 
 ## 2.3 在Microsoft Windows上安装MySQL
 
-Important
+**重点**
 
- MySQL 8.0 Server requires the Microsoft Visual C++ 2015 Redistributable Package to run on Windows platforms. Users should make sure the package has been installed on the system before installing the server. The package is available at the [Microsoft  Download Center](http://www.microsoft.com/en-us/download/default.aspx). Additionally, MySQL debug binaries require Visual Studio 2015 to be installed.
+> 在Windows上运行MySQL 8.0 服务器需要Microsoft Visual C++ 2015 运行库。用户在安装服务器之前，应确保该运行库已经安装在系统上。该软件包可在[微软下载中心](http://www.microsoft.com/en-us/download/default.aspx)获得。此外，MySQL调试二进制文件需要安装Visual Studio 2015。
 
-  MySQL is available for Microsoft Windows 64-bit operating systems  only. For supported Windows platform information, see  https://www.mysql.com/support/supportedplatforms/database.html.  
+  MySQL仅适用于Microsoft Windows 64位操作系统。关于支持的Windows平台信息，见https://www.mysql.com/support/supportedplatforms/database.html。 
 
-  There are different methods to install MySQL on Microsoft Windows.
 
-### MySQL Installer Method
+在 Windows 上安装 MySQL 有两种方法。
 
-  The simplest and recommended method is to download MySQL Installer (for  Windows) and let it install and configure a specific version of  MySQL Server as follows:
+### 使用 MySQL 安装包
 
-1. Download MySQL Installer from https://dev.mysql.com/downloads/installer/ and execute it.
+最简单和推荐的方法是下载MySQL安装包（用于Windows），让它安装和配置特定版本的MySQL服务器，方法如下：
 
- Note
+1. 从 https://dev.mysql.com/downloads/installer/ 下载 MySQL 安装包并运行
 
- Unlike the standard MySQL Installer, the smaller "web-community" version does not bundle any MySQL applications but it will download the MySQL products you choose to install.
+**注意**
+> 与标准的 MySQL 安装程序不同，较小的 "社区版"不捆绑任何 MySQL 应用程序，只包含你你选择安装的 MySQL 产品。
 
-2. Determine the setup type to use for the initial installation of MySQL products. For example:
+1. 确定初始安装MySQL产品时要使用的设置类型。例如：
 
- - Developer Default: Provides a setup type that includes the selected version of MySQL Server and other MySQL tools related to MySQL development, such as MySQL Workbench. 
- - Server Only: Provides a setup for the selected version of MySQL Server without other products. 
- - Custom: Enables you to select any version of MySQL Server and other MySQL products.
+ - 开发者默认设置: Provides a setup type that includes the selected version of MySQL Server and other MySQL tools related to MySQL development, such as MySQL Workbench. 
+ - 仅服务器: Provides a setup for the selected version of MySQL Server without other products. 
+ - 自定义: Enables you to select any version of MySQL Server and other MySQL products.
 
-3. Install the server instance (and products) and then begin the server configuration by first selecting one of the following levels of availability for the server instance:
+2. Install the server instance (and products) and then begin the server configuration by first selecting one of the following levels of availability for the server instance:
 
  - Standalone MySQL Server / Classic MySQL Replication (default) 
 
